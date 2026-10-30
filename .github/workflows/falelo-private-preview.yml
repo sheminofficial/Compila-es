@@ -1,6 +1,9 @@
 name: Falelo private preview build
 
 on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/falelo-private-preview.yml']
   workflow_dispatch:
     inputs:
       source_ref:
@@ -14,7 +17,7 @@ permissions:
 
 jobs:
   preview:
-    if: ${{ inputs.source_ref == 'feat/falelo-stories-app-preview-20261030' }}
+    if: ${{ github.event_name == 'push' || inputs.source_ref == 'feat/falelo-stories-app-preview-20261030' }}
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
@@ -22,8 +25,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: sheminofficial/Shemin-Official
-          ref: ${{ inputs.source_ref }}
-          token: ${{ secrets.FALELO_SOURCE_TOKEN }}
+          ref: feat/falelo-stories-app-preview-20261030
+          token: ${{ secrets.FALELO_BUILD }}
           persist-credentials: false
           path: source
       - name: Setup Node
@@ -54,13 +57,13 @@ jobs:
         id: deliver
         working-directory: source
         env:
-          GH_TOKEN: ${{ secrets.FALELO_SOURCE_TOKEN }}
+          GH_TOKEN: ${{ secrets.FALELO_BUILD }}
         run: |
           set -euo pipefail
           tar -C dist -czf falelo-preview.tar.gz .
           sha256sum falelo-preview.tar.gz > falelo-preview.sha256
           tag="falelo-preview-${GITHUB_RUN_ID}"
-          gh release create "$tag" falelo-preview.tar.gz falelo-preview.sha256 --repo sheminofficial/Shemin-Official --target "${{ inputs.source_ref }}" --title "Falelo preview ${GITHUB_RUN_ID}" --notes "Private preview build from an isolated branch." --prerelease
+          gh release create "$tag" falelo-preview.tar.gz falelo-preview.sha256 --repo sheminofficial/Shemin-Official --target "feat/falelo-stories-app-preview-20261030" --title "Falelo preview ${GITHUB_RUN_ID}" --notes "Private preview build from an isolated branch." --prerelease
           gh release download "$tag" --repo sheminofficial/Shemin-Official --pattern falelo-preview.tar.gz --dir verify
           cmp falelo-preview.tar.gz verify/falelo-preview.tar.gz
           echo "tag=$tag" >> "$GITHUB_OUTPUT"
@@ -69,8 +72,8 @@ jobs:
         if: ${{ steps.deliver.outcome == 'success' }}
         working-directory: source
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.FALELO_CLOUDFLARE_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.FALELO_CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.FALELO_PAGES_DEPLOY }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
         run: npx --yes wrangler@4 pages deploy dist --project-name falelo --branch feat-falelo-stories-preview
       - name: Remove temporary runner copies
         if: always()
