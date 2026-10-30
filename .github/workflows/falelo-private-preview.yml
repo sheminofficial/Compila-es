@@ -30,8 +30,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: npm
-          cache-dependency-path: source/package-lock.json
       - name: Install, test, and build
         working-directory: source
         run: |
