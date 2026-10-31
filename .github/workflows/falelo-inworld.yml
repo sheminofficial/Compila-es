@@ -31,13 +31,13 @@ jobs:
           OPERATION: ${{ inputs.operation_name }}
         run: |
           if [ "$ACTION" = validate ]; then
-            python3 inworld_batch.py validate
+            python3 falelo-audio/inworld_batch.py validate
           elif [ "$ACTION" = submit ]; then
-            python3 inworld_batch.py submit --batch "$BATCH"
+            python3 falelo-audio/inworld_batch.py submit --batch "$BATCH"
           elif [ "$ACTION" = collect ]; then
-            python3 inworld_batch.py collect --operation "$OPERATION"
+            python3 falelo-audio/inworld_batch.py collect --operation "$OPERATION"
           elif [ "$ACTION" = generate ]; then
-            python3 inworld_batch.py generate
+            python3 falelo-audio/inworld_batch.py generate
           fi
       - name: Download audio artifact
         if: always() && (inputs.action == 'collect' || inputs.action == 'generate')
@@ -45,7 +45,7 @@ jobs:
         with:
           name: falelo-audios
           path: |
-            audios/
-            operacoes.json
-            vozes-escolhidas.json
+            falelo-audio/audios/
+            falelo-audio/operacoes.json
+            falelo-audio/vozes-escolhidas.json
           if-no-files-found: ignore
