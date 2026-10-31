@@ -1,4 +1,5 @@
 name: Falelo private preview build
+# Revalidate private story selection and approved-audio gating (2026-10-31).
 # Build a private-source feature branch in ephemeral runner; preview deploy only, no production.
 
 on:
