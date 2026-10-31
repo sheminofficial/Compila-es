@@ -2,6 +2,9 @@ name: Falelo private preview build
 # Verify corrected Scala schedule and mobile preview.
 
 on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/falelo-private-preview.yml']
   workflow_dispatch:
     inputs:
       source_ref:
@@ -15,7 +18,7 @@ permissions:
 
 jobs:
   preview:
-    if: ${{ inputs.source_ref == 'feat/falelo-stories-app-preview-20261030' }}
+    if: ${{ github.event_name == 'push' || inputs.source_ref == 'feat/falelo-stories-app-preview-20261030' }}
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
