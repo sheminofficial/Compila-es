@@ -1,5 +1,6 @@
 name: Falelo private preview build
 # Validate a minimal private production candidate against legacy Falelo before any promotion.
+# Rerun after preserving the existing production guest speech ABI.
 # Build a private-source feature branch in ephemeral runner; preview deploy only, no production.
 
 on:
