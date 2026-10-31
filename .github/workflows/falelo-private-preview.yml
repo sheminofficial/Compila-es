@@ -56,6 +56,7 @@ jobs:
           run_private scala npm run build:learning
           run_private worker npm run check:worker
           run_private types npm run typecheck
+          # Verify server-owned Wildcard interpretation and automatic fullscreen assignment.
           run_private tests npm test
           run_private build npm run build
           cd falelo-stories/player
