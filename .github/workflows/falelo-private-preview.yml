@@ -1,4 +1,5 @@
 name: Falelo private preview build
+# Verify branded light-theme preview.
 
 on:
   push:
