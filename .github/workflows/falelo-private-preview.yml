@@ -33,6 +33,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Setup sbt
+        uses: sbt/setup-sbt@v1
       - name: Install, test, and build
         working-directory: source
         run: |
@@ -45,6 +52,7 @@ jobs:
             echo "Private ${label} passed."
           }
           run_private install npm install --no-audit --no-fund
+          run_private scala npm run build:learning
           run_private tests npm test
           run_private build npm run build
           cd falelo-stories/player
