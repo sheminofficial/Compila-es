@@ -1,5 +1,5 @@
 name: Falelo private preview build
-# Revalidate private story selection and approved-audio gating (2026-10-31).
+# Validate a minimal private production candidate against legacy Falelo before any promotion.
 # Build a private-source feature branch in ephemeral runner; preview deploy only, no production.
 
 on:
@@ -11,7 +11,7 @@ on:
       source_ref:
         description: Private source branch
         required: true
-        default: feat/falelo-stories-in-track-20261031
+        default: feat/falelo-stories-production-candidate-20261031
         type: string
 
 permissions:
@@ -19,7 +19,7 @@ permissions:
 
 jobs:
   preview:
-    if: ${{ github.event_name == 'push' || inputs.source_ref == 'feat/falelo-stories-in-track-20261031' }}
+    if: ${{ github.event_name == 'push' || inputs.source_ref == 'feat/falelo-stories-production-candidate-20261031' }}
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: sheminofficial/Shemin-Official
-          ref: feat/falelo-stories-in-track-20261031
+          ref: feat/falelo-stories-production-candidate-20261031
           token: ${{ secrets.FALELO_BUILD }}
           persist-credentials: false
           path: source
@@ -77,7 +77,7 @@ jobs:
           tar -C dist -czf falelo-preview.tar.gz .
           sha256sum falelo-preview.tar.gz > falelo-preview.sha256
           tag="falelo-preview-${GITHUB_RUN_ID}"
-          gh release create "$tag" falelo-preview.tar.gz falelo-preview.sha256 --repo sheminofficial/Shemin-Official --target "feat/falelo-stories-in-track-20261031" --title "Falelo preview ${GITHUB_RUN_ID}" --notes "Private preview build from an isolated branch." --prerelease
+          gh release create "$tag" falelo-preview.tar.gz falelo-preview.sha256 --repo sheminofficial/Shemin-Official --target "feat/falelo-stories-production-candidate-20261031" --title "Falelo preview ${GITHUB_RUN_ID}" --notes "Private preview build from an isolated branch." --prerelease
           gh release download "$tag" --repo sheminofficial/Shemin-Official --pattern falelo-preview.tar.gz --dir verify
           cmp falelo-preview.tar.gz verify/falelo-preview.tar.gz
           echo "tag=$tag" >> "$GITHUB_OUTPUT"
