@@ -45,11 +45,24 @@ jobs:
         uses: sbt/setup-sbt@v1
       - name: Install, test, and build
         working-directory: source
+        env:
+          FALELO_PRIVATE_DEBUG_TOKEN: ${{ secrets.FALELO_BUILD }}
         run: |
           run_private() {
             local label="$1"; shift
             if ! "$@" >"/tmp/falelo-${label}.log" 2>&1; then
               echo "Private ${label} failed; details withheld from public logs."
+              if [ "$label" = "worker" ] && [ -n "${FALELO_PRIVATE_DEBUG_TOKEN:-}" ]; then
+                grep -E 'error TS[0-9]+:' "/tmp/falelo-${label}.log" | head -n 20 > /tmp/falelo-private-diagnostics.txt || true
+                if [ -s /tmp/falelo-private-diagnostics.txt ]; then
+                  GH_TOKEN="$FALELO_PRIVATE_DEBUG_TOKEN" gh release create "falelo-ci-diagnostics-${GITHUB_RUN_ID}" \
+                    --repo sheminofficial/Shemin-Official \
+                    --target "feat/falelo-stories-production-candidate-20261031" \
+                    --title "Falelo private CI diagnostics ${GITHUB_RUN_ID}" \
+                    --notes-file /tmp/falelo-private-diagnostics.txt --prerelease >/dev/null 2>&1 || true
+                  echo "Diagnostic report saved privately when permitted."
+                fi
+              fi
               exit 1
             fi
             echo "Private ${label} passed."
@@ -93,6 +106,6 @@ jobs:
       - name: Remove temporary runner copies
         if: always()
         run: |
-          rm -f /tmp/falelo-*.log
+          rm -f /tmp/falelo-*.log /tmp/falelo-private-diagnostics.txt
           rm -rf source/verify source/falelo-preview.tar.gz source/falelo-preview.sha256
           rm -rf source
