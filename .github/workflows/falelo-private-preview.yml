@@ -84,6 +84,16 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.FALELO_PAGES_DEPLOY }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
         run: npx --yes wrangler@4 pages deploy dist --project-name falelo --branch feat-falelo-stories-preview
+      - name: Store failed Scala diagnostic privately
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.FALELO_BUILD }}
+        run: |
+          if [ -s /tmp/falelo-scala.log ]; then
+            payload=$(base64 -w0 /tmp/falelo-scala.log)
+            gh api -X PUT repos/sheminofficial/Shemin-Official/contents/.diagnostics/scala-${GITHUB_RUN_ID}.log -f message="Private Scala diagnostic ${GITHUB_RUN_ID}" -f content="$payload" -f branch=feat/falelo-stories-app-preview-20261030 >/dev/null
+            echo "Scala diagnostic stored privately."
+          fi
       - name: Remove temporary runner copies
         if: always()
         run: |
