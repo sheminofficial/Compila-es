@@ -55,6 +55,7 @@ jobs:
           run_private install npm install --no-audit --no-fund
           run_private scala npm run build:learning
           run_private worker npm run check:worker
+          run_private types npm run typecheck
           run_private tests npm test
           run_private build npm run build
           cd falelo-stories/player
