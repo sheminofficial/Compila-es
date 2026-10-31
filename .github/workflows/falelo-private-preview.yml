@@ -1,5 +1,5 @@
 name: Falelo private preview build
-# Verify branded light-theme preview.
+# Verify Scala schedule, narrative artifacts, and mobile layout.
 
 on:
   push:
