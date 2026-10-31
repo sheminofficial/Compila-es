@@ -55,6 +55,7 @@ jobs:
           run_private install npm install --no-audit --no-fund
           run_private scala npm run build:learning
           run_private worker npm run check:worker
+          run_private story-routing node --experimental-strip-types --test tests/test_story_assignment.mjs
           run_private types npm run typecheck
           # Verify server-owned Wildcard interpretation and automatic fullscreen assignment.
           run_private tests npm test
