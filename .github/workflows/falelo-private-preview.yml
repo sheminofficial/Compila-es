@@ -61,15 +61,6 @@ jobs:
           run_private stories-build npm run build
           mkdir -p ../../dist/stories
           cp -R dist/. ../../dist/stories/
-      - name: Save private build diagnostic on failure
-        if: failure()
-        env:
-          GH_TOKEN: ${{ secrets.FALELO_BUILD }}
-        run: |
-          log=/tmp/falelo-stories-build.log
-          if [ -f "$log" ]; then
-            gh api -X PUT "repos/sheminofficial/Shemin-Official/contents/.diagnostics/${GITHUB_RUN_ID}-stories-build.log" -f message="Temporary private build diagnostic" -f branch="feat/falelo-stories-app-preview-20261030" -f content="$(base64 -w0 "$log")" >/dev/null
-          fi
       - name: Save private release and verify
         id: deliver
         working-directory: source
