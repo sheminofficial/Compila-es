@@ -1,0 +1,29 @@
+name: Falelo — prepare approved audio release
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/falelo-audio-intake.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prepare safe private release for approved voice files
+        env:
+          GH_TOKEN: ${{ secrets.FALELO_BUILD }}
+        run: |
+          set -euo pipefail
+          repo=sheminofficial/Shemin-Official
+          tag=falelo-story-audio-20261031
+          if gh release view "$tag" --repo "$repo" >/dev/null 2>&1; then
+            echo "Private upload destination already exists."
+          else
+            gh release create "$tag" \
+              --repo "$repo" \
+              --title "Falelo Stories: vetted story recordings" \
+              --notes "Upload the single falelo-stories-audios-selecionados.zip asset from ChatGPT. The guarded production deployment verifies all 161 clips and will only enable Signal after they are present and served as audio." \
+              --prerelease
+            echo "Created private release destination."
+          fi
