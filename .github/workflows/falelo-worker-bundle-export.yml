@@ -21,6 +21,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: sbt/setup-sbt@v1
       - name: Compile Worker locally (never publish from GitHub)
         working-directory: source
         env:
@@ -28,6 +33,7 @@ jobs:
         run: |
           set -euo pipefail
           npm install --no-audit --no-fund >/tmp/falelo-npm.log 2>&1
+          npm run build:learning >/tmp/falelo-scala.log 2>&1 || { echo 'Scala.js compilation failed.'; exit 1; }
           if ! npx --yes wrangler@4.139.0 deploy --config worker/wrangler.falelo.production.toml --dry-run --outdir /tmp/falelo-worker-output > /tmp/falelo-dryrun.log 2>&1; then
             grep -E 'Error|ERROR|error|invalid|Unexpected|Failed|failed' /tmp/falelo-dryrun.log | tail -n 18 > /tmp/falelo-private-error.txt || true
             if [ -s /tmp/falelo-private-error.txt ]; then
