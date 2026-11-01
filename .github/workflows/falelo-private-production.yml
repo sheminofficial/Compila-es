@@ -1,0 +1,162 @@
+name: Falelo — release Stories to production
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/falelo-private-production.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: falelo-private-production
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout confidential Falelo source
+        uses: actions/checkout@v4
+        with:
+          repository: sheminofficial/Shemin-Official
+          ref: feature/falelo-migration
+          token: ${{ secrets.FALELO_BUILD }}
+          persist-credentials: false
+          path: source
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: sbt/setup-sbt@v1
+
+      - name: Compile Scala and review all private source before deploy
+        working-directory: source
+        run: |
+          set -euo pipefail
+          check() {
+            label="$1"; shift
+            if ! "$@" >"/tmp/falelo-${label}.log" 2>&1; then
+              echo "Build/check ${label} failed. Private source logs were withheld."
+              exit 1
+            fi
+            echo "PASS: ${label}"
+          }
+          check npm npm install --no-audit --no-fund
+          check scala npm run build:learning
+          check worker npm run check:worker
+          check types npm run typecheck
+          check routing node --experimental-strip-types --test tests/test_story_assignment.mjs
+          check tests npm test
+          check frontend npm run build
+          cd falelo-stories/player
+          check player-npm npm install --no-audit --no-fund
+          check player-tests npm test
+          check player-build npm run build
+          mkdir -p ../../dist/stories
+          cp -R dist/. ../../dist/stories/
+
+      - name: Accept recordings only from exact verified private release asset
+        working-directory: source
+        env:
+          GH_TOKEN: ${{ secrets.FALELO_BUILD }}
+        run: |
+          set -euo pipefail
+          if gh release view falelo-story-audio-20261031 --repo sheminofficial/Shemin-Official >/dev/null 2>&1; then
+            mkdir -p /tmp/falelo-audio-release
+            if gh release download falelo-story-audio-20261031 \
+              --repo sheminofficial/Shemin-Official \
+              --pattern falelo-stories-audios-selecionados.zip \
+              --dir /tmp/falelo-audio-release >/dev/null 2>&1 && \
+              test -s /tmp/falelo-audio-release/falelo-stories-audios-selecionados.zip; then
+              python - <<'PY'
+          import json,zipfile,shutil
+          from pathlib import Path
+          archive=Path('/tmp/falelo-audio-release/falelo-stories-audios-selecionados.zip')
+          maps=[json.loads(Path(x).read_text()) for x in ['falelo-stories/player/src/audio-map-01-05.json','falelo-stories/player/src/audio-map-06-10.json']]
+          expected={Path(v).name for m in maps for v in m.values()}
+          assert len(expected)==161,'The asset set must contain 161 distinct approved clip identifiers.'
+          with zipfile.ZipFile(archive) as z:
+              files={x.filename for x in z.infolist() if not x.is_dir() and x.filename.startswith('audio/')}
+              assert files=={'audio/'+x for x in expected},'Audio release missing or contains unknown clips'
+              out=Path('dist/stories/audio');out.mkdir(parents=True,exist_ok=True)
+              for x in z.infolist():
+                  if x.filename in files:
+                      name=Path(x.filename).name
+                      (out/name).write_bytes(z.read(x))
+          print('Verified: 161 approved audio filenames and embedded scene references.')
+          PY
+              echo "true" > /tmp/falelo-audio-ready
+            else
+              echo "Audio release exists but has no approved archive. Signal remains disabled."
+              echo "false" > /tmp/falelo-audio-ready
+            fi
+          else
+            echo "Audio release has not been uploaded. Signal remains disabled."
+            echo "false" > /tmp/falelo-audio-ready
+          fi
+
+      - name: Publish Worker with narrative assignment disabled during cutover
+        working-directory: source
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN || secrets.FALELO_PAGES_DEPLOY }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
+        run: |
+          set -euo pipefail
+          test -n "${CLOUDFLARE_API_TOKEN:-}" || { echo "Cloudflare API secret unavailable."; exit 1; }
+          test "${CLOUDFLARE_ACCOUNT_ID:-}" = "6712f3a232737373cbce8006428880c7"
+          cp worker/wrangler.falelo.production.toml /tmp/falelo-production-worker.toml
+          sed -i 's/STORY_ACTIVITIES_ENABLED = "true"/STORY_ACTIVITIES_ENABLED = "false"/' worker/wrangler.falelo.production.toml
+          if ! npx --yes wrangler@4.139.0 deploy --config worker/wrangler.falelo.production.toml --keep-vars > /tmp/falelo-worker.log 2>&1; then
+            echo "Cloudflare refused Worker rollout; Pages was not modified."
+            grep -E '(ERROR|Error|code:|permission|Unauthorized|Forbidden)' /tmp/falelo-worker.log | head -n 15 || true
+            exit 1
+          fi
+
+      - name: Publish full-screen /stories and current site to Pages production
+        working-directory: source
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN || secrets.FALELO_PAGES_DEPLOY }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
+        run: |
+          set -euo pipefail
+          if ! npx --yes wrangler@4.139.0 pages deploy dist --project-name falelo --branch feature/falelo-migration > /tmp/falelo-pages.log 2>&1; then
+            echo "Pages deployment failed; narrative assignment remains disabled on Worker."
+            exit 1
+          fi
+          echo "Pages production updated."
+
+      - name: Confirm media and activate story assignments after frontend is ready
+        working-directory: source
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN || secrets.FALELO_PAGES_DEPLOY }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
+        run: |
+          set -euo pipefail
+          curl -fsSL --retry 4 --retry-delay 2 --max-time 25 https://falelo.pages.dev/stories/index.html >/tmp/falelo-stories.html
+          grep -q 'script' /tmp/falelo-stories.html
+          cp /tmp/falelo-production-worker.toml worker/wrangler.falelo.production.toml
+          if [ "$(cat /tmp/falelo-audio-ready)" = "true" ]; then
+            url="https://falelo.pages.dev/stories/audio/01-uninvited-name-signal-01.mp3"
+            type=$(curl -sSI --retry 2 --max-time 25 "$url" | grep -i '^content-type:' | tail -n1 || true)
+            echo "$type" | grep -qi 'audio/' || { echo "Audio asset not online; stopping before Signal rollout."; exit 1; }
+            sed -i 's/STORY_APPROVED_AUDIO = "false"/STORY_APPROVED_AUDIO = "true"/' worker/wrangler.falelo.production.toml
+          fi
+          if ! npx --yes wrangler@4.139.0 deploy --config worker/wrangler.falelo.production.toml --keep-vars > /tmp/falelo-activation.log 2>&1; then
+            echo "Pages deployed, but server-side narrative activities remain OFF pending Worker activation."
+            exit 1
+          fi
+          curl -fsSL --retry 4 --retry-delay 2 --max-time 25 https://falelo.pages.dev/api/health >/tmp/falelo-health.json
+          grep -q '"service":"falelo-api"' /tmp/falelo-health.json
+          test "$(curl -sS --max-time 20 -o /dev/null -w '%{http_code}' https://falelo.pages.dev/api/me)" = "401"
+          echo "PASS: Pages, /stories, Worker and protected API."
+          if [ "$(cat /tmp/falelo-audio-ready)" = "true" ]; then echo "SIGNAL_AUDIO=ready"; else echo "SIGNAL_AUDIO=awaiting_upload"; fi
+
+      - name: Remove all private workspace copies and scratch logs
+        if: always()
+        run: rm -rf source /tmp/falelo-*.log /tmp/falelo-*.toml /tmp/falelo-audio* /tmp/falelo-stories.html /tmp/falelo-health.json /tmp/falelo-audio-ready
