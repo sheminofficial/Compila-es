@@ -73,45 +73,21 @@ jobs:
           mkdir -p ../../dist/stories
           cp -R dist/. ../../dist/stories/
 
-      - name: Accept recordings only from exact verified private release asset
+      - name: Accept ONLY the exact user-supplied falelo-audios.zip archive
         working-directory: source
         env:
           GH_TOKEN: ${{ secrets.FALELO_BUILD }}
         run: |
           set -euo pipefail
-          if gh release view falelo-story-audio-20261031 --repo sheminofficial/Shemin-Official >/dev/null 2>&1; then
-            mkdir -p /tmp/falelo-audio-release
-            if gh release download falelo-story-audio-20261031 \
-              --repo sheminofficial/Shemin-Official \
-              --pattern falelo-stories-audios-selecionados.zip \
-              --dir /tmp/falelo-audio-release >/dev/null 2>&1 && \
-              test -s /tmp/falelo-audio-release/falelo-stories-audios-selecionados.zip; then
-              python - <<'PY'
-          import json,zipfile,shutil
-          from pathlib import Path
-          archive=Path('/tmp/falelo-audio-release/falelo-stories-audios-selecionados.zip')
-          maps=[json.loads(Path(x).read_text()) for x in ['falelo-stories/player/src/audio-map-01-05.json','falelo-stories/player/src/audio-map-06-10.json']]
-          expected={Path(v).name for m in maps for v in m.values()}
-          assert len(expected)==161,'The asset set must contain 161 distinct approved clip identifiers.'
-          with zipfile.ZipFile(archive) as z:
-              files={x.filename for x in z.infolist() if not x.is_dir() and x.filename.startswith('audio/')}
-              assert files=={'audio/'+x for x in expected},'Audio release missing or contains unknown clips'
-              out=Path('dist/stories/audio');out.mkdir(parents=True,exist_ok=True)
-              for x in z.infolist():
-                  if x.filename in files:
-                      name=Path(x.filename).name
-                      (out/name).write_bytes(z.read(x))
-          print('Verified: 161 approved audio filenames and embedded scene references.')
-          PY
-              echo "true" > /tmp/falelo-audio-ready
-            else
-              echo "Audio release exists but has no approved archive. Signal remains disabled."
-              echo "false" > /tmp/falelo-audio-ready
-            fi
-          else
-            echo "Audio release has not been uploaded. Signal remains disabled."
-            echo "false" > /tmp/falelo-audio-ready
-          fi
+          mkdir -p "$RUNNER_TEMP/falelo-stories-upload"
+          gh release download falelo-story-audio-20261031 \
+            --repo sheminofficial/Shemin-Official \
+            --pattern 'falelo-audios.zip' \
+            --dir "$RUNNER_TEMP/falelo-stories-upload"
+          python scripts/prepare-falelo-story-audio.py \
+            --zip "$RUNNER_TEMP/falelo-stories-upload/falelo-audios.zip" \
+            --out-dir dist/stories/audio
+          echo "true" > /tmp/falelo-audio-ready
 
       - name: Publish Worker with narrative assignment disabled during cutover
         working-directory: source
