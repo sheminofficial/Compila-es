@@ -37,12 +37,24 @@ jobs:
 
       - name: Compile Scala and review all private source before deploy
         working-directory: source
+        env:
+          FALELO_PRIVATE_DEBUG_TOKEN: ${{ secrets.FALELO_BUILD }}
         run: |
           set -euo pipefail
           check() {
             label="$1"; shift
             if ! "$@" >"/tmp/falelo-${label}.log" 2>&1; then
               echo "Build/check ${label} failed. Private source logs were withheld."
+              if [ -n "${FALELO_PRIVATE_DEBUG_TOKEN:-}" ]; then
+                grep -E 'error TS[0-9]+:|Error:|failed' "/tmp/falelo-${label}.log" | head -n 18 > /tmp/falelo-audio-build-errors.txt || true
+                if [ -s /tmp/falelo-audio-build-errors.txt ]; then
+                  GH_TOKEN="$FALELO_PRIVATE_DEBUG_TOKEN" gh release create "falelo-private-build-errors-${GITHUB_RUN_ID}" \
+                    --repo sheminofficial/Shemin-Official --target feature/falelo-migration \
+                    --title "Private Falelo build errors ${GITHUB_RUN_ID}" \
+                    --notes-file /tmp/falelo-audio-build-errors.txt --prerelease >/dev/null 2>&1 || true
+                  echo "Diagnostics saved privately."
+                fi
+              fi
               exit 1
             fi
             echo "PASS: ${label}"
@@ -159,4 +171,4 @@ jobs:
 
       - name: Remove all private workspace copies and scratch logs
         if: always()
-        run: rm -rf source /tmp/falelo-*.log /tmp/falelo-*.toml /tmp/falelo-audio* /tmp/falelo-stories.html /tmp/falelo-health.json /tmp/falelo-audio-ready
+        run: rm -rf source /tmp/falelo-*.log /tmp/falelo-*.toml /tmp/falelo-audio* /tmp/falelo-stories.html /tmp/falelo-health.json /tmp/falelo-audio-ready /tmp/falelo-audio-build-errors.txt
