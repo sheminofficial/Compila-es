@@ -1,8 +1,5 @@
 name: Falelo Inworld batch
 on:
-  push:
-    paths:
-      - .github/workflows/falelo-inworld.yml
   workflow_dispatch:
     inputs:
       action:
@@ -29,7 +26,7 @@ jobs:
       - name: Run Inworld batch
         env:
           INWORLD_API_KEY: ${{ secrets.INWORLD_API_KEY }}
-          ACTION: ${{ inputs.action || 'generate' }}
+          ACTION: ${{ inputs.action }}
           BATCH: ${{ inputs.batch_number }}
           OPERATION: ${{ inputs.operation_name }}
         run: |
@@ -43,7 +40,7 @@ jobs:
             python3 falelo-audio/inworld_batch.py generate
           fi
       - name: Download audio artifact
-        if: always() && (github.event_name == 'push' || inputs.action == 'collect' || inputs.action == 'generate')
+        if: always() && (inputs.action == 'collect' || inputs.action == 'generate')
         uses: actions/upload-artifact@v4
         with:
           name: falelo-audios
