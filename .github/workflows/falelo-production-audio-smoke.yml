@@ -1,0 +1,88 @@
+name: Falelo — production Stories media and API smoke
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/falelo-production-audio-smoke.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout private speech-to-story map without exposing source
+        uses: actions/checkout@v4
+        with:
+          repository: sheminofficial/Shemin-Official
+          ref: feature/falelo-migration
+          token: ${{ secrets.FALELO_BUILD }}
+          persist-credentials: false
+          path: source
+      - name: Validate all 161 user-provided recordings from public production
+        run: |
+          python - <<'PY'
+          import concurrent.futures
+          import hashlib
+          import json
+          import time
+          import urllib.error
+          import urllib.request
+          from pathlib import Path
+
+          base='https://falelo.pages.dev'
+          expected='382c985ea0b982557d47f4a6b71e16b03a78e79b876bc069cfb9e7c3babf5fb2'
+          root=Path('source')
+          audio=root/'falelo-stories/media/falelo-audios.zip'
+          assert hashlib.sha256(audio.read_bytes()).hexdigest()==expected,'Unexpected production audio source ZIP'
+          maps=[json.loads((root/x).read_text()) for x in ('falelo-stories/player/src/audio-map-01-05.json','falelo-stories/player/src/audio-map-06-10.json')]
+          names=sorted({v for d in maps for v in d.values()})
+          assert len(names)==161, 'Expected 161 unique mapped recordings'
+
+          def request(url, method='GET'):
+              last=None
+              for attempt in range(3):
+                  try:
+                      r=urllib.request.urlopen(urllib.request.Request(url,method=method,headers={'User-Agent':'Falelo-Production-Smoke/1.0'}),timeout=20)
+                      with r:
+                          data=r.read(512) if method=='GET' else b''
+                          return r.status,r.headers.get('Content-Type',''),int(r.headers.get('Content-Length','0') or '0'),data
+                  except urllib.error.HTTPError as e:
+                      if e.code in (401,403,404) and not ('audio/' in url and attempt < 2):
+                          return e.code,e.headers.get('Content-Type',''),0,b''
+                      last=e
+                  except Exception as e:last=e
+                  time.sleep(2+attempt)
+              raise RuntimeError(f'Network failure for {url}: {last}')
+
+          failures=[]
+          for endpoint in ['/stories/index.html','/stories/audio/source-verification.json','/api/health','/api/me']:
+              status,ctype,size,data=request(base+endpoint)
+              if endpoint=='/api/me':
+                  if status!=401:failures.append(f'{endpoint}: expected HTTP 401, got {status}')
+              elif status!=200:failures.append(f'{endpoint}: HTTP {status}')
+              if endpoint.endswith('source-verification.json') and status==200:
+                  try:
+                      record=json.loads(data)
+                      if record.get('sha256')!=expected or record.get('clips')!=161:failures.append('Audio provenance receipt mismatch')
+                  except Exception as e:failures.append('Bad audio provenance JSON')
+
+          def verify(uri):
+              status,ctype,size,_=request(base+uri,method='HEAD')
+              if status!=200:return uri+f' HTTP {status}'
+              if not ctype.lower().startswith('audio/'):return uri+f' Content-Type {ctype}'
+              if size and size<1000:return uri+f' short {size} bytes'
+              return None
+
+          with concurrent.futures.ThreadPoolExecutor(max_workers=12) as pool:
+              for issue in pool.map(verify,names):
+                  if issue: failures.append(issue)
+          print('Audited source SHA256 verified, 161 scene clips checked.')
+          print('Errors:',len(failures))
+          for issue in failures[:18]:print('FAIL',issue)
+          if failures:raise SystemExit(1)
+          print('PASS: Pages, 161 playable URLs, source receipt, /api/health and /api/me auth boundary.')
+          PY
+      - name: Remove private code and ZIP from ephemeral runner
+        if: always()
+        run: rm -rf source
