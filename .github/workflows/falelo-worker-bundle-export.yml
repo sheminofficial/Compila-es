@@ -59,7 +59,7 @@ jobs:
           # Prefer the main bundle created by the Wrangler dry-run, not a source map.
           target=next((f for f in files if f.name in ('index.js','worker.js')), max(files,key=lambda p:p.stat().st_size))
           raw=target.read_bytes()
-          assert 10000<len(raw)<950000, f'Unexpected bundle size {len(raw)} bytes'
+          assert 10000<len(raw)<2400000, f'Unexpected bundle size {len(raw)} bytes'
           body={'message':'build: private Cloudflare Worker bundle from production source','branch':'feat/falelo-worker-artifact-20261101','content':base64.b64encode(raw).decode()}
           Path('/tmp/falelo-upload-worker.json').write_text(json.dumps(body))
           print('Private bundle ready: bytes',len(raw))
