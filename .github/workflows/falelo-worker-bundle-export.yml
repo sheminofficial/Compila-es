@@ -23,10 +23,21 @@ jobs:
           node-version: '22'
       - name: Compile Worker locally (never publish from GitHub)
         working-directory: source
+        env:
+          GH_TOKEN: ${{ secrets.FALELO_BUILD }}
         run: |
           set -euo pipefail
           npm install --no-audit --no-fund >/tmp/falelo-npm.log 2>&1
-          npx --yes wrangler@4.139.0 deploy --config worker/wrangler.falelo.production.toml --dry-run --outdir /tmp/falelo-worker-output >/tmp/falelo-dryrun.log 2>&1 || { echo "Worker dry-run failed."; exit 1; }
+          if ! npx --yes wrangler@4.139.0 deploy --config worker/wrangler.falelo.production.toml --dry-run --outdir /tmp/falelo-worker-output > /tmp/falelo-dryrun.log 2>&1; then
+            grep -E 'Error|ERROR|error|invalid|Unexpected|Failed|failed' /tmp/falelo-dryrun.log | tail -n 18 > /tmp/falelo-private-error.txt || true
+            if [ -s /tmp/falelo-private-error.txt ]; then
+              gh release create "falelo-worker-build-error-${GITHUB_RUN_ID}" --repo sheminofficial/Shemin-Official \
+                --target feature/falelo-migration --title "Falelo Worker build diagnostics" \
+                --notes-file /tmp/falelo-private-error.txt --prerelease >/dev/null 2>&1 || true
+            fi
+            echo "Worker dry-run failed. Details saved privately."
+            exit 1
+          fi
           find /tmp/falelo-worker-output -type f -name '*.js' -printf '%s %p\n'
           test -n "$(find /tmp/falelo-worker-output -type f -name '*.js' -print -quit)"
       - name: Save bundle as private GitHub blob (not a public artifact)
@@ -54,4 +65,4 @@ jobs:
           echo "Worker source staged privately for Cloudflare connector."
       - name: Remove temporary source and logs
         if: always()
-        run: rm -rf source /tmp/falelo-worker-output /tmp/falelo-upload-worker.json /tmp/falelo-commit-sha /tmp/falelo-npm.log /tmp/falelo-dryrun.log
+        run: rm -rf source /tmp/falelo-worker-output /tmp/falelo-upload-worker.json /tmp/falelo-commit-sha /tmp/falelo-npm.log /tmp/falelo-dryrun.log /tmp/falelo-private-error.txt
