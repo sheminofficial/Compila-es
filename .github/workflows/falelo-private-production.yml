@@ -73,20 +73,14 @@ jobs:
           mkdir -p ../../dist/stories
           cp -R dist/. ../../dist/stories/
 
-      - name: Accept ONLY the exact user-supplied falelo-audios.zip archive
+      - name: Install exact approved audio package already committed by the user
         working-directory: source
-        env:
-          GH_TOKEN: ${{ secrets.FALELO_BUILD }}
         run: |
           set -euo pipefail
-          mkdir -p "$RUNNER_TEMP/falelo-stories-upload"
-          gh release download falelo-story-audio-20261031 \
-            --repo sheminofficial/Shemin-Official \
-            --pattern 'falelo-audios.zip' \
-            --dir "$RUNNER_TEMP/falelo-stories-upload"
           python scripts/prepare-falelo-story-audio.py \
-            --zip "$RUNNER_TEMP/falelo-stories-upload/falelo-audios.zip" \
+            --zip falelo-stories/media/falelo-audios.zip \
             --out-dir dist/stories/audio
+          test -s dist/stories/audio/source-verification.json
           echo "true" > /tmp/falelo-audio-ready
 
       - name: Publish Worker with narrative assignment disabled during cutover
