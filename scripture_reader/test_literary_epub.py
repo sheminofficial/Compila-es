@@ -78,10 +78,10 @@ def test_accessible_vector_cover_is_packaged():
         assert "<desc id=\"cover-desc\">" in svg
 
 def test_coverage_report_partitions_all_canonical_books():
-    build()
+    builder.build()
     report = json.loads((ROOT / "generated" / "retelling-coverage.json").read_text())
     completed = report["completed_books"]
     missing = report["missing_books"]
     assert len(completed) + len(missing) == 66
     assert set(completed).isdisjoint(missing)
-    assert completed + [name for name in BOOK_ORDER if name in missing] == BOOK_ORDER
+    assert completed + [name for name in builder.BOOK_ORDER if name in missing] == builder.BOOK_ORDER
