@@ -2,7 +2,7 @@
 
 Editorial manuscript for *The Bible, Retold - A Literary Adaptation for Young English Readers*. The public-domain Protestant World English Bible is the source. Read this adaptation alongside Scripture.
 
-## Chapter 1 @@ A Living Hope
+## Chapter 1 — A Living Hope
 
 Peter, an apostle of Jesus Christ, wrote to chosen exiles scattered through Pontus, Galatia, Cappadocia, Asia, and Bithynia, chosen by the Father, made holy by the Spirit, and called to obey Jesus and share his sprinkled blood.
 
@@ -16,7 +16,7 @@ Having been reborn through God's enduring word, they should love one another sin
 
 *Original Scripture [1 Peter 1](https://ebible.org/engwebp/1PE01.htm).*
 
-## Chapter 2 @@ Living Stones
+## Chapter 2 — Living Stones
 
 They must discard malice, deceit, hypocrisy, envy, and slander, craving pure spiritual milk so they might grow.
 
@@ -32,7 +32,7 @@ Household servants were told to submit even to harsh masters. Patient suffering 
 
 *Original Scripture [1 Peter 2](https://ebible.org/engwebp/1PE02.htm).*
 
-## Chapter 3 @@ A Defense Made with Gentleness
+## Chapter 3 — A Defense Made with Gentleness
 
 Wives were instructed to relate respectfully to husbands, so unbelieving husbands might be won without words by pure conduct. Their beauty should center not on decoration but the hidden person of a gentle, quiet spirit. Sarah, who obeyed Abraham, was an example of hopeful holiness.
 
@@ -46,7 +46,7 @@ Christ suffered once for sins, the righteous for the unrighteous, bringing them 
 
 *Original Scripture [1 Peter 3](https://ebible.org/engwebp/1PE03.htm).*
 
-## Chapter 4 @@ Love Covers Many Sins
+## Chapter 4 — Love Covers Many Sins
 
 Since Christ suffered in flesh, believers should adopt his resolve and no longer live for human desires but God's will. Their former life of sensuality, drunkenness, feasts, and idolatry was enough. Former companions might insult them for refusing the same excess, but all would answer to the Judge of living and dead.
 
@@ -58,7 +58,7 @@ They must not suffer as murderers, thieves, evildoers, or meddlers. But sufferin
 
 *Original Scripture [1 Peter 4](https://ebible.org/engwebp/1PE04.htm).*
 
-## Chapter 5 @@ Stand Firm in Grace
+## Chapter 5 — Stand Firm in Grace
 
 Peter appealed to elders as a fellow elder, witness of Christ's sufferings, and sharer in coming glory. They should shepherd God's flock willingly, not for dishonest gain or domination, but as examples. When the Chief Shepherd appeared, they would receive an unfading crown.
 
