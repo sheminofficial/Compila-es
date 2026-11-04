@@ -49,3 +49,17 @@ def test_epub_contains_navigation_glossary_and_dashed_vocabulary_css():
         assert "text-decoration-style: dashed" in css
         assert 'class="vocab"' in chapter_text
         assert "Interactive Glossary" in glossary
+
+
+def test_verified_videos_use_allowed_https_hosts_and_are_embedded():
+    allowed_hosts = {"www.youtube.com", "youtube.com", "bibleproject.com", "www.bibleproject.com", "www.thechosen.tv", "thechosen.tv"}
+    videos = [video for manuscript in manuscripts() for video in manuscript["videos"]]
+    assert videos, "At least one independently verified video is required"
+    from urllib.parse import urlparse
+    assert all(urlparse(video["url"]).scheme == "https" and urlparse(video["url"]).hostname in allowed_hosts for video in videos)
+    output = builder.build()
+    with zipfile.ZipFile(output) as archive:
+        content = "\n".join(archive.read(name).decode("utf-8") for name in archive.namelist() if name.endswith(".xhtml"))
+        for video in videos:
+            assert video["url"].replace("&", "&amp;") in content
+            assert video["note"] in content
