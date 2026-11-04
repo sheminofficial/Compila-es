@@ -31,6 +31,7 @@ BOOK_ORDER = [
     "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians", "1 Timothy", "2 Timothy", "Titus",
     "Philemon", "Hebrews", "James", "1 Peter", "2 Peter", "1 John", "2 John", "3 John", "Jude", "Revelation",
 ]
+CHAPTER_COUNTS = dict(zip(BOOK_ORDER, [50,40,27,36,34,24,21,4,31,24,22,25,29,36,10,13,10,42,150,31,12,8,66,52,5,48,12,14,3,9,1,4,7,3,3,3,2,14,4,28,16,24,21,28,16,16,13,6,6,4,4,5,3,6,4,3,1,13,5,5,3,5,1,1,1,22]))
 ALIASES = {"Song of Solomon": "Song of Songs"}
 
 CSS = """
@@ -119,6 +120,9 @@ def build() -> Path:
         actual = [c["number"] for c in manuscript["chapters"]]
         if actual != manuscript["reviewed"]:
             raise ValueError(f"Review rows do not match chapters in {manuscript['book']}: {actual} != {manuscript['reviewed']}")
+        expected = list(range(1, CHAPTER_COUNTS[manuscript["book"]] + 1))
+        if actual != expected:
+            raise ValueError(f"Incomplete canonical manuscript for {manuscript['book']}: {actual} != {expected}")
     complete = chapter_count == EXPECTED_CHAPTERS and reviewed_count == EXPECTED_CHAPTERS and len(manuscripts) == 66
     output = GENERATED / (FINAL_NAME if complete else PREVIEW_NAME)
     GENERATED.mkdir(exist_ok=True)
@@ -160,7 +164,7 @@ def build() -> Path:
     book.toc = tuple(toc); book.spine = spine
     book.add_item(epub.EpubNcx()); book.add_item(epub.EpubNav())
     epub.write_epub(str(output), book, {"epub3_pages": False})
-    report = {"books": len(manuscripts), "chapters": chapter_count, "reviewed_chapters": reviewed_count, "glossary_terms": len(all_glossary), "complete": complete, "output": str(output)}
+    report = {"books": len(manuscripts), "expected_books": 66, "chapters": chapter_count, "expected_chapters": EXPECTED_CHAPTERS, "remaining_chapters": EXPECTED_CHAPTERS - chapter_count, "reviewed_chapters": reviewed_count, "glossary_terms": len(all_glossary), "complete": complete, "output": str(output)}
     (GENERATED / "retelling-coverage.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report, indent=2))
     return output
