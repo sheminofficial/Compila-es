@@ -16,7 +16,7 @@ Whatever happened, they must live as citizens worthy of the gospel, standing in 
 
 *Original Scripture [Philippians 1](https://ebible.org/engwebp/PHP01.htm).*
 
-## Chapter 2"éÝyø§yÔ The Mind of Christ
+## Chapter 2 — The Mind of Christ
 
 Christ's encouragement, love, Spirit-fellowship, and compassion should make them united in love and purpose. They must reject selfish ambition, value others humbly, and consider one another's interests.
 
@@ -30,7 +30,7 @@ He was sending Epaphroditus, their brother, coworker, fellow soldier, messenger,
 
 *Original Scripture [Philippians 2](https://ebible.org/engwebp/PHP02.htm).*
 
-## Chapter 3"éÝyø§yÔ Pressing toward the Goal
+## Chapter 3 — Pressing toward the Goal
 
 They should rejoice in the Lord and beware of corrupt workers who treated circumcision as the ground of belonging. God's people worship by the Spirit, rejoice in Christ, and trust no human qualifications.
 
@@ -44,7 +44,7 @@ Their citizenship was in heaven. From there they awaited Jesus Christ, who would
 
 *Original Scripture [Philippians 3](https://ebible.org/engwebp/PHP03.htm).*
 
-## Chapter 4"éÝyø§yÔ Joy, Peace, and a Fragrant Gift
+## Chapter 4 — Joy, Peace, and a Fragrant Gift
 
 Paul called them his joy and crown and urged them to stand firm. Euodia and Syntyche should agree in the Lord, helped by a loyal coworker; they had struggled beside Paul, Clement, and others whose names were in the book of life.
 
