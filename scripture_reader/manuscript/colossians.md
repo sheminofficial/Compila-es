@@ -2,7 +2,7 @@
 
 Editorial manuscript for *The Bible, Retold - A Literary Adaptation for Young English Readers*. The public-domain Protestant World English Bible is the source. This retelling preserves the letter's people, places, arguments, warnings, household teaching, and greetings. Read it alongside Scripture.
 
-## Chapter 1 - The Son Who Holds All Things Together
+## Chapter 1 — The Son Who Holds All Things Together
 
 Paul, an apostle by God's will, and Timothy wrote to the faithful believers in Colossae with grace and peace.
 
@@ -18,7 +18,7 @@ Paul suffered for Christ's body, the church. He was commissioned to reveal the m
 
 *Original Scripture [Colossians 1](https://ebible.org/engwebp/COL01.htm).*
 
-## Chapter 2 - Rooted in Christ
+## Chapter 2 — Rooted in Christ
 
 Paul struggled for Colossae, Laodicea, and believers who had never met him. He wanted their hearts encouraged and joined in love, knowing God's mystery, Christ, in whom every treasure of wisdom and knowledge is hidden. Persuasive speech must not deceive them.
 
@@ -34,7 +34,7 @@ Since they died with Christ to the world's principles, why submit to "Do not han
 
 *Original Scripture [Colossians 2](https://ebible.org/engwebp/COL02.htm).*
 
-## Chapter 3 - Put On Love
+## Chapter 3 — Put On Love
 
 Since believers were raised with Christ, they should seek what is above, where Christ sits at God's right hand. They had died, and their life was hidden with Christ in God. When Christ appeared, they would appear with him in glory.
 
@@ -50,7 +50,7 @@ Wives should submit as fitting in the Lord. Husbands must love without harshness
 
 *Original Scripture [Colossians 3](https://ebible.org/engwebp/COL03.htm).*
 
-## Chapter 4 - Speech Seasoned with Grace
+## Chapter 4 — Speech Seasoned with Grace
 
 Masters must provide what is just and fair, remembering their Master in heaven.
 
