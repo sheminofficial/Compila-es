@@ -160,6 +160,12 @@ The book ended between memory and expectation: remember Moses; wait for Elijah. 
 | statute | 4 | A written law or command. |
 | reconciliation | 4 | The repair of a damaged relationship. |
 
+## Verified videos
+
+| Chapter | Title | URL | Editorial note |
+| --- | --- | --- | --- |
+| 1 | BibleProject — Overview: Malachi | https://www.youtube.com/watch?v=HPGShWZ4Jvk | Official English animated overview of the book’s literary design. This is an educational interpretation, not Scripture, and should be compared with the biblical text. |
+
 ## Editorial review record
 
 | Chapter | Source comparison | Editorial attention |
