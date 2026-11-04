@@ -6,6 +6,12 @@ on:
     paths:
       - 'scripture_reader/**'
       - '.github/workflows/build-scripture-reader.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'scripture_reader/**'
+      - '.github/workflows/build-scripture-reader.yml'
   workflow_dispatch:
 permissions:
   contents: write
