@@ -112,6 +112,12 @@ The church waited for Christ not through panic, speculation, or interference in 
 | withdraw company | 3 | Stop close social association for a corrective purpose. |
 | admonish | 3 | Warn or correct someone seriously but with concern. |
 
+## Verified videos
+
+| Chapter | Title | URL | Editorial note |
+| --- | --- | --- | --- |
+| 1 | BibleProject — Overview: 2 Thessalonians | https://bibleproject.com/videos/2-thessalonians/ | Official English animated overview of the letter’s three-part design. This is an educational interpretation, not Scripture, and does not settle disputed identities in chapter 2. |
+
 ## Editorial review record
 
 | Chapter | Source comparison | Editorial attention |
