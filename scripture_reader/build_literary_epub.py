@@ -134,7 +134,11 @@ def build() -> Path:
     book.set_title("THE BIBLE, RETOLD — A Literary Adaptation for Young English Readers" + ("" if complete else " (Editorial Preview)"))
     book.set_language("en-US")
     book.add_author("Shemin Official editorial project")
+    book.add_metadata("DC", "publisher", "Shemin Official")
     book.add_metadata("DC", "description", "Educational literary adaptation for young English readers; not a replacement for Scripture.")
+    book.add_metadata("DC", "rights", "Original literary adaptation; public-domain World English Bible used as the source text.")
+    cover_path = ROOT / "scripture_reader" / "assets" / "cover.svg"
+    book.set_cover("cover.svg", cover_path.read_bytes(), create_page=True)
     book.add_item(STYLE)
 
     notice = page("Start Here", "start.xhtml", f'<p class="eyebrow">Faith · Literature · English</p><h1>THE BIBLE, RETOLD</h1><h2>A Literary Adaptation for Young English Readers</h2><div class="notice"><p>This is an educational literary adaptation, not a new revelation, an official translation, or a replacement for the Bible. Compare every retelling with Scripture.</p></div><p>This build contains {chapter_count} fully drafted and source-compared chapters. It is {"the complete edition" if complete else "an editorial work in progress"}.</p>')
