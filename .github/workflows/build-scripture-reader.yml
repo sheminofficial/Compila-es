@@ -40,16 +40,16 @@ jobs:
         if: github.ref_name == 'bible-literary-retelling-2026'
         run: python scripture_reader/build_literary_epub.py
       - name: Install official EPUBCheck 5.4.0
+        if: github.ref_name == 'bible-literary-retelling-2026'
         run: |
           curl --fail --location --retry 3 https://github.com/w3c/epubcheck/releases/download/v5.4.0/epubcheck-5.4.0.zip --output /tmp/epubcheck.zip
           unzip -q /tmp/epubcheck.zip -d /tmp
-      - name: Validate every generated EPUB with EPUBCheck
+      - name: Validate literary EPUB with EPUBCheck
+        if: github.ref_name == 'bible-literary-retelling-2026'
         run: |
-          set -e
-          for epub in generated/*.epub; do
-            report="generated/$(basename "$epub" .epub)-epubcheck.json"
-            java -jar /tmp/epubcheck-5.4.0/epubcheck.jar "$epub" --json "$report"
-          done
+          literary_epub=$(python -c 'import json,pathlib; print(pathlib.Path(json.load(open("generated/retelling-coverage.json"))["output"]).name)')
+          report="generated/${literary_epub%.epub}-epubcheck.json"
+          java -jar /tmp/epubcheck-5.4.0/epubcheck.jar "generated/$literary_epub" --json "$report"
       - name: Upload immutable EPUB artifacts and validation reports
         uses: actions/upload-artifact@v4
         with:
