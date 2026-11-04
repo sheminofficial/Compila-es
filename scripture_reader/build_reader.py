@@ -331,6 +331,44 @@ def process_doc(item):
                 caution=soup.new_tag("small");caution.string="Video dramatization may include fictional details not stated in Scripture."
                 note.append(caution)
             body.insert(0,note)
+        # Official source EPUB groups all chapters of a book into a single XHTML file.
+        # Put the matching editorial recap directly after the chapter marker.
+        inlined=[]
+        if book:
+            for chapter_div in list(body.find_all("div", class_="psalmlabel")):
+                chaptext=chapter_div.get_text(" ",strip=True)
+                if not re.fullmatch(r"\d{1,3}",chaptext):
+                    continue
+                number=int(chaptext)
+                if (book,number) not in SCENES:
+                    continue
+                title,story=SCENES[(book,number)]
+                note=soup.new_tag("aside")
+                note["class"]="editorial"
+                heading=soup.new_tag("h3")
+                heading.string="Before you read: "+title
+                note.append(heading)
+                para=soup.new_tag("p")
+                para.string=story
+                note.append(para)
+                disclaimer=soup.new_tag("small")
+                disclaimer.string="Literary scene guide, not a biblical verse."
+                note.append(disclaimer)
+                if (book,number) in VIDEOS:
+                    video_title,video_url=VIDEOS[(book,number)]
+                    video_para=soup.new_tag("p")
+                    video_para.string="Watch in English: "
+                    link=soup.new_tag("a",href=video_url)
+                    link.string=video_title
+                    video_para.append(link)
+                    note.append(video_para)
+                    video_disclaimer=soup.new_tag("small")
+                    video_disclaimer.string="The Chosen is a dramatization and may add scenes or dialogue not found in Scripture."
+                    note.append(video_disclaimer)
+                chapter_div.insert_after(note)
+                inlined.append(number)
+        if inlined:
+            print("INLINE_SCENES",book,inlined,flush=True)
         head=soup.find("head")
         if head:
             sty=BeautifulSoup(CSS,"lxml-xml")
