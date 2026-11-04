@@ -118,6 +118,12 @@ The letter had begun with unfinished churches and ended with believers learning 
 | factious | 3 | Repeatedly creating hostile groups and divisions. |
 | unfruitful | 3 | Failing to produce a useful or good result. |
 
+## Verified videos
+
+| Chapter | Title | URL | Editorial note |
+| --- | --- | --- | --- |
+| 1 | BibleProject — Overview: Titus | https://bibleproject.com/videos/titus/ | Official English animated overview of the letter’s literary design and its theme of transformation in Crete. This is an educational interpretation, not Scripture. |
+
 ## Editorial review record
 
 | Chapter | Source comparison | Editorial attention |
