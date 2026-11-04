@@ -39,7 +39,18 @@ jobs:
       - name: Build literary manuscript EPUB and coverage report
         if: github.ref_name == 'bible-literary-retelling-2026'
         run: python scripture_reader/build_literary_epub.py
-      - name: Upload immutable EPUB artifacts
+      - name: Install official EPUBCheck 5.4.0
+        run: |
+          curl --fail --location --retry 3 https://github.com/w3c/epubcheck/releases/download/v5.4.0/epubcheck-5.4.0.zip --output /tmp/epubcheck.zip
+          unzip -q /tmp/epubcheck.zip -d /tmp
+      - name: Validate every generated EPUB with EPUBCheck
+        run: |
+          set -e
+          for epub in generated/*.epub; do
+            report="generated/$(basename "$epub" .epub)-epubcheck.json"
+            java -jar /tmp/epubcheck-5.4.0/epubcheck.jar "$epub" --json "$report"
+          done
+      - name: Upload immutable EPUB artifacts and validation reports
         uses: actions/upload-artifact@v4
         with:
           name: bible-story-first-reader-${{ github.ref_name }}-${{ github.sha }}
@@ -48,5 +59,6 @@ jobs:
             generated/The_Bible_Retold_Editorial_Preview.epub
             generated/The_Bible_Retold_Complete_English_Edition.epub
             generated/retelling-coverage.json
+            generated/*-epubcheck.json
           if-no-files-found: error
           retention-days: 60
