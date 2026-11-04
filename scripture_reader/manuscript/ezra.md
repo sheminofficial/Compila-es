@@ -2,7 +2,7 @@
 
 Editorial manuscript for *The Bible, Retold - A Literary Adaptation for Young English Readers*. The public-domain Protestant World English Bible is the source. Lists are condensed in prose while their purpose, representative names, and stated totals are preserved. Read this adaptation alongside Scripture.
 
-## Chapter 1 @@ Cyrus Opens the Way Home
+## Chapter 1 — Cyrus Opens the Way Home
 
 In Cyrus of Persia's first year, the Lord fulfilled Jeremiah's word by stirring the king to issue a written proclamation throughout his empire.
 
@@ -14,7 +14,7 @@ Cyrus returned temple objects Nebuchadnezzar had taken from Jerusalem and placed
 
 *Original Scripture [Ezra 1](https://ebible.org/engwebp/EZR01.htm).*
 
-## Chapter 2 @@ The Returning Community
+## Chapter 2 — The Returning Community
 
 The exiles returned from Babylon to Jerusalem and Judah under Zerubbabel, Jeshua, Nehemiah, Seraiah, Reelaiah, Mordecai, and other leaders, each family to its town.
 
@@ -30,7 +30,7 @@ Priests, Levites, people, singers, gatekeepers, and temple servants settled in t
 
 *Original Scripture [Ezra 2](https://ebible.org/engwebp/EZR02.htm).*
 
-## Chapter 3 @@ The Altar before the Foundation
+## Chapter 3 — The Altar before the Foundation
 
 In the seventh month, the people gathered as one in Jerusalem. Jeshua son of Jozadak, fellow priests, and Zerubbabel son of Shealtiel rebuilt Israel's altar despite fear of neighboring peoples.
 
@@ -46,7 +46,7 @@ People shouted, but older priests and family heads who remembered the former tem
 
 *Original Scripture [Ezra 3](https://ebible.org/engwebp/EZR03.htm).*
 
-## Chapter 4 @@ The Work Is Forced to Stop
+## Chapter 4 — The Work Is Forced to Stop
 
 Enemies of Judah and Benjamin offered to build, claiming they had sacrificed to Israel's God since Esar Haddon settled them there. Zerubbabel, Jeshua, and family heads refused: Cyrus had assigned the work to the returned community.
 
@@ -62,7 +62,7 @@ Temple work ceased until Darius of Persia's second year.
 
 *Original Scripture [Ezra 4](https://ebible.org/engwebp/EZR04.htm).*
 
-## Chapter 5 @@ The Prophets Call the Builders Back
+## Chapter 5 — The Prophets Call the Builders Back
 
 Haggai and Zechariah son of Iddo prophesied to Judah and Jerusalem in Israel's God's name. Zerubbabel and Jeshua restarted the temple, supported by the prophets.
 
@@ -78,7 +78,7 @@ Tattenai asked Darius to search Babylon's archives for Cyrus's decree and send h
 
 *Original Scripture [Ezra 5](https://ebible.org/engwebp/EZR05.htm).*
 
-## Chapter 6 @@ The Temple Is Finished
+## Chapter 6 — The Temple Is Finished
 
 Darius ordered a search. At Ecbatana in Media, a memorandum confirmed Cyrus's decree: rebuild the Jerusalem temple at royal expense and restore its vessels.
 
@@ -94,7 +94,7 @@ They kept Passover and Unleavened Bread for seven days. The Lord gave joy and tu
 
 *Original Scripture [Ezra 6](https://ebible.org/engwebp/EZR06.htm).*
 
-## Chapter 7 @@ Ezra Arrives with the King's Letter
+## Chapter 7 — Ezra Arrives with the King's Letter
 
 In Artaxerxes's seventh year, Ezra traveled from Babylon. He descended from Aaron through the priestly line and was a skilled scribe in Moses' law. The king granted his requests because God's hand was upon him.
 
@@ -110,7 +110,7 @@ Ezra blessed God for putting temple honor in the king's heart and giving him fai
 
 *Original Scripture [Ezra 7](https://ebible.org/engwebp/EZR07.htm).*
 
-## Chapter 8 @@ Safe Journey without Soldiers
+## Chapter 8 — Safe Journey without Soldiers
 
 Ezra listed family leaders returning with him, including descendants of Phinehas, Ithamar, David, Parosh, Pahath Moab, Zattu, Adin, Elam, Shephatiah, Joab, Bani, Bebai, Azgad, Adonikam, Bigvai, and others.
 
@@ -124,7 +124,7 @@ The travelers offered twelve bulls, ninety-six rams, seventy-seven lambs, and tw
 
 *Original Scripture [Ezra 8](https://ebible.org/engwebp/EZR08.htm).*
 
-## Chapter 9 @@ Ezra's Prayer of Confession
+## Chapter 9 — Ezra's Prayer of Confession
 
 Officials reported that Israelites, priests, and Levites had not separated from surrounding peoples' practices and had intermarried; leaders were foremost in unfaithfulness.
 
@@ -142,7 +142,7 @@ Ezra ended before Israel's righteous God: they remained only as a guilty remnant
 
 *Original Scripture [Ezra 9](https://ebible.org/engwebp/EZR09.htm).*
 
-## Chapter 10 @@ A Difficult Community Decision
+## Chapter 10 — A Difficult Community Decision
 
 While Ezra prayed and wept before the temple, a great crowd gathered, weeping bitterly.
 
