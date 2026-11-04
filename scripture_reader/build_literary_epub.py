@@ -41,6 +41,7 @@ h1,h2,.eyebrow,.meta { font-family: Arial, 'Noto Sans', sans-serif; }
 h1 { color: #8b5634; line-height: 1.15; } h2 { color: #a36b43; }
 p { margin: .82em 0; } .eyebrow { letter-spacing: .12em; text-transform: uppercase; font-size: .72em; color: #936d51; }
 .meta,.notice { font-size: .86em; color: #6f625a; }
+.video { margin: 1.2em 0; padding: .75em 1em; border: 1px solid #b98256; border-radius: .35em; background: rgba(185,130,86,.10); }
 .notice { border-left: .28em solid #b98256; padding: .65em 1em; background: rgba(185,130,86,.12); }
 a { color: #8b5634; } a.vocab { color: inherit; text-decoration-line: underline; text-decoration-style: dashed; text-decoration-color: #b47a50; text-underline-offset: .2em; }
 dl { margin: 0; } dt { font-weight: bold; color: #8b5634; margin-top: 1.1em; } dd { margin: .25em 0 0 1em; }
@@ -82,9 +83,10 @@ def parse(path: Path) -> dict:
         if term.strip().lower() in {"expression", "term"}:
             continue
         glossary.append({"term": term.strip(), "chapter": int(chapter), "meaning": meaning.strip()})
+    videos = [{"chapter": int(chapter), "title": title.strip(), "url": url.strip(), "note": note.strip()} for chapter, title, url, note in re.findall(r"^\| (\d+) \| ([^|]+?) \| (https://[^| ]+) \| ([^|]+?) \|$", raw, re.M)]
     review_part = raw.split("## Editorial review", 1)
     reviewed = [int(n) for n in re.findall(r"^\| (\d+) \| (?:Compared with |\d+:)", review_part[1], re.M)] if len(review_part) == 2 else []
-    return {"book": book, "chapters": chapters, "glossary": glossary, "reviewed": reviewed, "path": str(path)}
+    return {"book": book, "chapters": chapters, "glossary": glossary, "videos": videos, "reviewed": reviewed, "path": str(path)}
 
 
 def mark_terms(text: str, entries: list[dict], used: set[str]) -> str:
@@ -148,7 +150,8 @@ def build() -> Path:
             filename = f'{slug(manuscript["book"])}-{chapter["number"]:03d}.xhtml'
             used = set()
             paras = "".join(f'<p>{mark_terms(p, terms, used)}</p>' for p in chapter["paragraphs"])
-            body = f'<p class="eyebrow">{html.escape(manuscript["book"])}</p><h1>Chapter {chapter["number"]} — {html.escape(chapter["title"])}</h1>{paras}<p class="meta">Original Scripture: <a href="{html.escape(chapter["source_url"], quote=True)}">{html.escape(chapter["source_label"])}</a></p>'
+            video_html = "".join(f'<aside class="video"><strong>Watch in English:</strong> <a href="{html.escape(v["url"], quote=True)}">{html.escape(v["title"])}</a><p class="meta">{html.escape(v["note"])}</p></aside>' for v in manuscript["videos"] if v["chapter"] == chapter["number"])
+            body = f'<p class="eyebrow">{html.escape(manuscript["book"])}</p><h1>Chapter {chapter["number"]} — {html.escape(chapter["title"])}</h1>{paras}{video_html}<p class="meta">Original Scripture: <a href="{html.escape(chapter["source_url"], quote=True)}">{html.escape(chapter["source_label"])}</a></p>'
             item = page(f'{manuscript["book"]} {chapter["number"]} — {chapter["title"]}', filename, body)
             book.add_item(item); spine.append(item); chapter_links.append(item)
         toc.append((epub.Section(manuscript["book"]), chapter_links))
@@ -164,7 +167,7 @@ def build() -> Path:
     book.toc = tuple(toc); book.spine = spine
     book.add_item(epub.EpubNcx()); book.add_item(epub.EpubNav())
     epub.write_epub(str(output), book, {"epub3_pages": False})
-    report = {"books": len(manuscripts), "expected_books": 66, "chapters": chapter_count, "expected_chapters": EXPECTED_CHAPTERS, "remaining_chapters": EXPECTED_CHAPTERS - chapter_count, "reviewed_chapters": reviewed_count, "glossary_terms": len(all_glossary), "complete": complete, "output": str(output)}
+    report = {"books": len(manuscripts), "expected_books": 66, "chapters": chapter_count, "expected_chapters": EXPECTED_CHAPTERS, "remaining_chapters": EXPECTED_CHAPTERS - chapter_count, "reviewed_chapters": reviewed_count, "glossary_terms": len(all_glossary), "verified_videos": sum(len(m["videos"]) for m in manuscripts), "complete": complete, "output": str(output)}
     (GENERATED / "retelling-coverage.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report, indent=2))
     return output
