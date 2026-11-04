@@ -298,9 +298,6 @@ def process_doc(item):
             return False, None, None, 0
         book,chapter=identify(item,soup)
         body=soup.find("body")
-        if book == "Mark":
-            print("MARK_HTML_START",str(body)[:2800],flush=True)
-            print("MARK_ELEMENTS",[(x.name,x.get("class"),x.get("id"),x.get_text(" ",strip=True)[:55]) for x in body.find_all(["h1","h2","h3","span","div"],limit=45)],flush=True)
         total_chars = len(body.get_text(" ",strip=True))
         if total_chars < 200:
             return False,book,chapter,total_chars
@@ -362,7 +359,7 @@ def guide():
 <h2>Read with curiosity, not fear</h2><p>Try these questions: What happened? What does this show about people? What might this show about God? What is still confusing?</p>
 <div class="note"><p><strong>Videos:</strong> Selected chapters contain direct YouTube links to scenes from <em>The Chosen</em>. The series is a creative dramatization, not a replacement for biblical text. Internet access is required to watch them. Availability and audio language may vary.</p></div>
 <p><strong>Source and rights:</strong> Bible source: World English Bible, Protestant edition (66 books), public domain: https://ebible.org/details.php?id=engwebp . The name 'World English Bible' is the source attribution, not the name of this edited edition.</p>
-<p><a href="reader-book-guide.xhtml">Explore the 66 book guide</a> | <a href="reader-glossary.xhtml">Open the English dictionary</a></p></body></html>"""
+<p><a href="reader-book-guide.xhtml">Explore the 66 book guide</a> | <a href="reader-scenes.xhtml">Read the scene adaptations</a> | <a href="reader-glossary.xhtml">Open the English dictionary</a></p></body></html>"""
     return ebook_page("Start Here","reader-start.xhtml",body)
 
 def book_guide():
@@ -383,6 +380,25 @@ def glossary_page():
         parts.append('<dd>'+html.escape(definition)+ (('<p class="pt">Português: '+html.escape(pt)+'</p>') if pt else '') +'</dd>')
     parts.append("</dl></body></html>")
     return ebook_page("Simple English Dictionary","reader-glossary.xhtml","".join(parts))
+
+def scenes_page():
+    """Separate editorial scene retellings: never substituted for Bible verses."""
+    parts = ['<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Story scenes</title>',
+             '<style>body{font-family:Georgia,serif;line-height:1.65;color:#33281f} h1,h2{font-family:sans-serif;color:#795838} section{margin:1.6em 0;padding:1em;border-left:3px solid #b48b56;background:#fbf7ef} small{color:#736554}a{color:#795838}</style></head><body>',
+             '<h1>28 Bible Scenes — Story-First Reading</h1>',
+             '<p>These are short literary retellings in simpler English. They are <strong>not</strong> Bible verses and do not replace the full Scripture text. For the complete account, open the named book and chapter in the Bible table of contents.</p>']
+    for (book,chapter),(title,story) in SCENES.items():
+        parts.append('<section id="'+book.lower().replace(" ","-")+'-'+str(chapter)+'">')
+        parts.append('<h2>'+html.escape(title)+'</h2>')
+        parts.append('<small>'+html.escape(book)+' '+str(chapter)+' · Literary recap</small>')
+        parts.append('<p>'+html.escape(story)+'</p>')
+        if (book,chapter) in VIDEOS:
+            vtitle,url=VIDEOS[(book,chapter)]
+            parts.append('<p><a href="'+html.escape(url,quote=True)+'">Watch in English: '+html.escape(vtitle)+'</a></p>')
+            parts.append('<small>Video dramatizations may add invented dialogue and details. Compare with the biblical text.</small>')
+        parts.append('</section>')
+    parts.append('<p><a href="reader-start.xhtml">Back to the reading guide</a></p></body></html>')
+    return ebook_page("Story-First Scenes","reader-scenes.xhtml","".join(parts))
 
 def main():
     download()
@@ -406,14 +422,15 @@ def main():
     print("Recognized narrative chapters",len(found_scenes),repr(found_scenes),flush=True)
     if processed < 66:
         raise RuntimeError("Too few Scripture documents annotated. Review source document structure.")
-    intro=guide();overview=book_guide();words=glossary_page()
-    for item in (intro,overview,words):
+    intro=guide();overview=book_guide();scenes= scenes_page();words=glossary_page()
+    for item in (intro,overview,scenes,words):
         book.add_item(item)
     oldspine=list(book.spine)
     # Preserve the original source reading order, and add original teaching pages.
-    book.spine = [oldspine[0]]+[intro,overview]+oldspine[1:]+[words] if oldspine and oldspine[0]=='nav' else [intro,overview]+oldspine+[words]
+    book.spine = [oldspine[0]]+[intro,overview,scenes]+oldspine[1:]+[words] if oldspine and oldspine[0]=='nav' else [intro,overview,scenes]+oldspine+[words]
     book.toc = tuple([epub.Link(intro.file_name,intro.title,"reader-intro"),
-                      epub.Link(overview.file_name,overview.title,"reader-books")]+list(book.toc)+[
+                      epub.Link(overview.file_name,overview.title,"reader-books"),
+                      epub.Link(scenes.file_name,scenes.title,"reader-scenes")]+list(book.toc)+[
                       epub.Link(words.file_name,words.title,"reader-gloss")])
     book.set_title("Scripture Stories: A Story-First English Reader")
     book.set_language("en")
@@ -427,8 +444,8 @@ def main():
     test=epub.read_epub(OUTPUT)
     docs=list(test.get_items_of_type(ITEM_DOCUMENT))
     names={it.file_name for it in docs}
-    assert "reader-glossary.xhtml" in names and "reader-start.xhtml" in names
+    assert "reader-glossary.xhtml" in names and "reader-start.xhtml" in names and "reader-scenes.xhtml" in names
     assert len(docs) >= total_docs
-    print("VALIDATED document count",len(docs),"size",size,flush=True)
+    print("VALIDATED document count",len(docs),"size",size,"editorial scenes",len(SCENES),flush=True)
 if __name__=="__main__":
     main()
