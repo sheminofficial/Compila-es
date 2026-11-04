@@ -120,6 +120,12 @@ Glory belonged to him now and into the day of eternity.
 | dissolve | 3 | Break apart or lose a solid form. |
 | steadfastness | 3 | The ability to remain firm and faithful. |
 
+## Verified videos
+
+| Chapter | Title | URL | Editorial note |
+| --- | --- | --- | --- |
+| 1 | BibleProject — Overview: 2 Peter | https://bibleproject.com/videos/2-peter/ | Official English animated overview of the letter’s literary design, warnings about corrupt teachers, and new-creation hope. This is an educational interpretation, not Scripture. |
+
 ## Editorial review record
 
 | Chapter | Source comparison | Editorial attention |
