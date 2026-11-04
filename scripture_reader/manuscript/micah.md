@@ -2,7 +2,7 @@
 
 Editorial manuscript for *The Bible, Retold - A Literary Adaptation for Young English Readers*. The public-domain Protestant World English Bible is the source. Read this adaptation alongside Scripture.
 
-## Chapter 1 @@ The Lord Comes Down
+## Chapter 1 — The Lord Comes Down
 
 The Lord's word came to Micah of Moresheth during the reigns of Jotham, Ahaz, and Hezekiah, concerning Samaria and Jerusalem.
 
@@ -20,7 +20,7 @@ Judah should cut its hair in mourning for beloved children carried into exile.
 
 *Original Scripture [Micah 1](https://ebible.org/engwebp/MIC01.htm).*
 
-## Chapter 2 @@ Woe to Those Who Plan Injustice
+## Chapter 2 — Woe to Those Who Plan Injustice
 
 Woe to those planning evil in bed and carrying it out at morning because they possessed power. They coveted fields and houses, seizing inheritance and oppressing families.
 
@@ -34,7 +34,7 @@ Yet God promised to gather Jacob's remnant like sheep in a fold, noisy with peop
 
 *Original Scripture [Micah 2](https://ebible.org/engwebp/MIC02.htm).*
 
-## Chapter 3 @@ Leaders Who Hate Justice
+## Chapter 3 — Leaders Who Hate Justice
 
 Jacob's rulers should have known justice, yet they hated good and loved evil, pictured as tearing skin and flesh from God's people and cooking them in a pot. When they cried, God would hide his face because of their deeds.
 
@@ -48,7 +48,7 @@ Because of them, Zion would be plowed like a field, Jerusalem become ruins, and 
 
 *Original Scripture [Micah 3](https://ebible.org/engwebp/MIC03.htm).*
 
-## Chapter 4 @@ Swords into Plowshares
+## Chapter 4 — Swords into Plowshares
 
 In later days the Lord's temple mountain would rise above hills. Nations would stream upward, asking to learn God's ways. Instruction would go from Zion and the Lord's word from Jerusalem.
 
@@ -62,7 +62,7 @@ Many nations gathered against Zion, unaware of God's plan. Daughter Zion would r
 
 *Original Scripture [Micah 4](https://ebible.org/engwebp/MIC04.htm).*
 
-## Chapter 5 @@ The Ruler from Bethlehem
+## Chapter 5 — The Ruler from Bethlehem
 
 Jerusalem should gather for siege; Israel's judge would be struck on the cheek.
 
@@ -76,7 +76,7 @@ God would remove warhorses, chariots, cities, strongholds, sorceries, fortune te
 
 *Original Scripture [Micah 5](https://ebible.org/engwebp/MIC05.htm).*
 
-## Chapter 6 @@ What the Lord Requires
+## Chapter 6 — What the Lord Requires
 
 The Lord brought a covenant case before mountains and ancient foundations. What wrong had he done to weary his people?
 
@@ -90,7 +90,7 @@ They followed Omri's practices and Ahab's house, so they would become desolate a
 
 *Original Scripture [Micah 6](https://ebible.org/engwebp/MIC06.htm).*
 
-## Chapter 7 @@ Who Is a God Like You?
+## Chapter 7 — Who Is a God Like You?
 
 Micah grieved like someone seeking fruit after harvest and finding none. The faithful had vanished; people hunted one another. Officials, judges, and powerful people coordinated evil. The best resembled thorns.
 
