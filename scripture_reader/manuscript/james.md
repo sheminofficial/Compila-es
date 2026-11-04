@@ -2,7 +2,7 @@
 
 Editorial manuscript for *The Bible, Retold - A Literary Adaptation for Young English Readers*. The public-domain Protestant World English Bible is the source. Read this adaptation alongside Scripture.
 
-## Chapter 1 @@ Hearing That Becomes Doing
+## Chapter 1 — Hearing That Becomes Doing
 
 James, a servant of God and Jesus Christ, greeted the twelve tribes scattered among the nations.
 
@@ -20,7 +20,7 @@ True religion controls the tongue, cares for orphans and widows in distress, and
 
 *Original Scripture [James 1](https://ebible.org/engwebp/JAS01.htm).*
 
-## Chapter 2 @@ Faith Made Visible
+## Chapter 2 — Faith Made Visible
 
 Believers in glorious Jesus Christ must not practice favoritism. If a richly dressed visitor received honor while a poor person was told to stand aside or sit at someone's feet, the assembly had become judges with evil thoughts.
 
@@ -36,7 +36,7 @@ As a body without spirit is dead, faith without works is dead.
 
 *Original Scripture [James 2](https://ebible.org/engwebp/JAS02.htm).*
 
-## Chapter 3 @@ A Small Flame, a Great Forest
+## Chapter 3 — A Small Flame, a Great Forest
 
 Not many should become teachers, for teachers face stricter judgment and everyone stumbles in speech. A person able to control words could guide the whole body.
 
@@ -50,7 +50,7 @@ Wisdom from above is pure, peaceful, gentle, reasonable, full of mercy and good 
 
 *Original Scripture [James 3](https://ebible.org/engwebp/JAS03.htm).*
 
-## Chapter 4 @@ Draw Near to God
+## Chapter 4 — Draw Near to God
 
 Quarrels came from desires fighting within them. They wanted, envied, fought, and failed to receive because they did not ask - or asked selfishly to spend on pleasures.
 
@@ -66,7 +66,7 @@ Proud plans were evil. Whoever knew the good to do and refused it sinned.
 
 *Original Scripture [James 4](https://ebible.org/engwebp/JAS04.htm).*
 
-## Chapter 5 @@ Patient until the Harvest
+## Chapter 5 — Patient until the Harvest
 
 The oppressive rich should weep: stored wealth had rotted, clothes were moth-eaten, and corroded gold testified against them. Wages withheld from harvest workers cried out, and the Lord of Armies heard the reapers. They had lived luxuriously while condemning the righteous.
 
