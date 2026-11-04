@@ -2,7 +2,7 @@
 
 Editorial manuscript for *The Bible, Retold - A Literary Adaptation for Young English Readers*. The public-domain Protestant World English Bible is the source. Read this adaptation alongside Scripture.
 
-## Chapter 1 @@ Faith, Love, and Hope
+## Chapter 1 — Faith, Love, and Hope
 
 Paul, Silvanus, and Timothy wrote to the Thessalonian church in God the Father and the Lord Jesus Christ, offering grace and peace.
 
@@ -14,7 +14,7 @@ People reported how the Thessalonians welcomed the messengers, turned from idols
 
 *Original Scripture [1 Thessalonians 1](https://ebible.org/engwebp/1TH01.htm).*
 
-## Chapter 2 @@ Gentle as a Mother, Encouraging as a Father
+## Chapter 2 — Gentle as a Mother, Encouraging as a Father
 
 Their visit had not failed. After suffering in Philippi, Paul and his companions spoke courageously in Thessalonica amid conflict. Their appeal came without error, impurity, deception, flattery, greed, or a search for human praise. God had entrusted them with the gospel and examined their hearts.
 
@@ -28,7 +28,7 @@ Paul had been separated from them in person, not heart. He repeatedly tried to r
 
 *Original Scripture [1 Thessalonians 2](https://ebible.org/engwebp/1TH02.htm).*
 
-## Chapter 3 @@ Timothy Brings Good News
+## Chapter 3 — Timothy Brings Good News
 
 Unable to endure uncertainty, Paul chose to remain alone in Athens and sent Timothy, God's coworker in Christ's gospel, to strengthen and encourage their faith. They should not be shaken by suffering; believers had been warned that affliction would come.
 
@@ -40,7 +40,7 @@ May God the Father and Jesus direct the journey to them. May the Lord make their
 
 *Original Scripture [1 Thessalonians 3](https://ebible.org/engwebp/1TH03.htm).*
 
-## Chapter 4 @@ A Quiet Life and a Living Hope
+## Chapter 4 — A Quiet Life and a Living Hope
 
 They had learned how to live pleasingly before God and should progress still more. God's will was their holiness: avoiding sexual immorality, controlling their bodies honorably rather than in uncontrolled passion, and never exploiting another. God called them not to impurity but holiness; rejecting this instruction rejected God, who gives his Holy Spirit.
 
@@ -52,7 +52,7 @@ At the Lord's command, an archangel's voice, and God's trumpet, the Lord would d
 
 *Original Scripture [1 Thessalonians 4](https://ebible.org/engwebp/1TH04.htm).*
 
-## Chapter 5 @@ Children of Light
+## Chapter 5 — Children of Light
 
 They did not need dates and times: the Lord's day would come like a thief at night. While people announced peace and safety, destruction would arrive suddenly like labor pains.
 
