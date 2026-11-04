@@ -171,6 +171,12 @@ The final scene held both confidence and ordinary need: a faithful apostle await
 | pour out like an offering | 4 | Give one’s life completely, pictured as liquid offered in worship. |
 | parchment | 4 | Prepared animal skin used as a durable writing surface. |
 
+## Verified videos
+
+| Chapter | Title | URL | Editorial note |
+| --- | --- | --- | --- |
+| 1 | BibleProject — Overview: 2 Timothy | https://bibleproject.com/videos/2-timothy/ | Official English animated overview of Paul’s final letter, its suffering context, and Timothy’s calling. This is an educational interpretation, not Scripture. |
+
 ## Editorial review record
 
 | Chapter | Source comparison | Editorial attention |
