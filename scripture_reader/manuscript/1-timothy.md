@@ -2,7 +2,7 @@
 
 Editorial manuscript for *The Bible, Retold - A Literary Adaptation for Young English Readers*. The public-domain Protestant World English Bible is the source. Read this adaptation alongside Scripture.
 
-## Chapter 1 @@ Grace for the Chief of Sinners
+## Chapter 1 — Grace for the Chief of Sinners
 
 Paul, an apostle by God's command, wrote to Timothy, his true child in faith, with grace, mercy, and peace.
 
@@ -18,7 +18,7 @@ Paul entrusted Timothy with this charge according to earlier prophecies: fight t
 
 *Original Scripture [1 Timothy 1](https://ebible.org/engwebp/1TI01.htm).*
 
-## Chapter 2 @@ Prayer for All People
+## Chapter 2 — Prayer for All People
 
 First of all, believers should offer requests, prayers, intercessions, and thanksgiving for everyone, including kings and authorities, so they could live peaceful, reverent lives.
 
@@ -30,7 +30,7 @@ Women should dress modestly and sensibly, adorning themselves with good works ra
 
 *Original Scripture [1 Timothy 2](https://ebible.org/engwebp/1TI02.htm).*
 
-## Chapter 3 @@ Care for God's Household
+## Chapter 3 — Care for God's Household
 
 Anyone aspiring to oversee a church desired noble work. An overseer must be above reproach, faithful in marriage, sober, self-controlled, respectable, hospitable, able to teach, not violent or addicted to wine, but gentle, peaceful, and free from love of money.
 
@@ -44,7 +44,7 @@ The revealed mystery was great: Christ appeared in flesh, was vindicated by the 
 
 *Original Scripture [1 Timothy 3](https://ebible.org/engwebp/1TI03.htm).*
 
-## Chapter 4 @@ Train Yourself in Godliness
+## Chapter 4 — Train Yourself in Godliness
 
 The Spirit warned that later some would abandon faith for deceiving spirits and demonic teachings, promoted by hypocritical liars with seared consciences. They forbade marriage and foods God created to be received thankfully. God's creation is good and made holy through word and prayer.
 
@@ -56,7 +56,7 @@ He must not neglect his gift, given through prophecy with elders laying hands up
 
 *Original Scripture [1 Timothy 4](https://ebible.org/engwebp/1TI04.htm).*
 
-## Chapter 5 @@ Honor and Wise Care
+## Chapter 5 — Honor and Wise Care
 
 Timothy should not harshly rebuke an older man but appeal as to a father; younger men as brothers, older women as mothers, and younger women as sisters in purity.
 
@@ -70,7 +70,7 @@ Timothy must act without prejudice or favoritism, avoid hasty appointment and pa
 
 *Original Scripture [1 Timothy 5](https://ebible.org/engwebp/1TI05.htm).*
 
-## Chapter 6 @@ Fight the Good Fight
+## Chapter 6 — Fight the Good Fight
 
 Enslaved believers should respect masters so God's name was not slandered; believing masters should not be treated carelessly but served as beloved fellow believers.
 
