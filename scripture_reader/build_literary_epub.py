@@ -171,7 +171,7 @@ def build() -> Path:
     book.toc = tuple(toc); book.spine = spine
     book.add_item(epub.EpubNcx()); book.add_item(epub.EpubNav())
     epub.write_epub(str(output), book, {"epub3_pages": False})
-    report = {"books": len(manuscripts), "expected_books": 66, "chapters": chapter_count, "expected_chapters": EXPECTED_CHAPTERS, "remaining_chapters": EXPECTED_CHAPTERS - chapter_count, "reviewed_chapters": reviewed_count, "glossary_terms": len(all_glossary), "verified_videos": sum(len(m["videos"]) for m in manuscripts), "complete": complete, "output": str(output)}
+    report = {"books": len(manuscripts), "expected_books": 66, "completed_books": [m["book"] for m in manuscripts], "missing_books": [name for name in BOOK_ORDER if name not in {m["book"] for m in manuscripts}], "chapters": chapter_count, "expected_chapters": EXPECTED_CHAPTERS, "remaining_chapters": EXPECTED_CHAPTERS - chapter_count, "reviewed_chapters": reviewed_count, "glossary_terms": len(all_glossary), "verified_videos": sum(len(m["videos"]) for m in manuscripts), "complete": complete, "output": str(output)}
     (GENERATED / "retelling-coverage.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report, indent=2))
     return output
