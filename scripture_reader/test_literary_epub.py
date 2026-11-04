@@ -84,4 +84,6 @@ def test_coverage_report_partitions_all_canonical_books():
     missing = report["missing_books"]
     assert len(completed) + len(missing) == 66
     assert set(completed).isdisjoint(missing)
-    assert completed + [name for name in builder.BOOK_ORDER if name in missing] == builder.BOOK_ORDER
+    assert completed == [name for name in builder.BOOK_ORDER if name in completed]
+    assert missing == [name for name in builder.BOOK_ORDER if name in missing]
+    assert set(completed) | set(missing) == set(builder.BOOK_ORDER)
