@@ -2,7 +2,7 @@
 
 Editorial manuscript for *The Bible, Retold - A Literary Adaptation for Young English Readers*. The public-domain Protestant World English Bible is the source. Read this adaptation alongside Scripture.
 
-## Chapter 1 ∫w^~)ﬁt The Work God Began
+## Chapter 1 ‚Äî The Work God Began
 
 Paul and Timothy wrote to all God's holy people in Philippi, including overseers and servants, with grace and peace.
 
@@ -16,7 +16,7 @@ Whatever happened, they must live as citizens worthy of the gospel, standing in 
 
 *Original Scripture [Philippians 1](https://ebible.org/engwebp/PHP01.htm).*
 
-## Chapter 2"È›y¯ßy‘ The Mind of Christ
+## Chapter 2"√©√ùy√∏¬ßy√î The Mind of Christ
 
 Christ's encouragement, love, Spirit-fellowship, and compassion should make them united in love and purpose. They must reject selfish ambition, value others humbly, and consider one another's interests.
 
@@ -30,7 +30,7 @@ He was sending Epaphroditus, their brother, coworker, fellow soldier, messenger,
 
 *Original Scripture [Philippians 2](https://ebible.org/engwebp/PHP02.htm).*
 
-## Chapter 3"È›y¯ßy‘ Pressing toward the Goal
+## Chapter 3"√©√ùy√∏¬ßy√î Pressing toward the Goal
 
 They should rejoice in the Lord and beware of corrupt workers who treated circumcision as the ground of belonging. God's people worship by the Spirit, rejoice in Christ, and trust no human qualifications.
 
@@ -44,7 +44,7 @@ Their citizenship was in heaven. From there they awaited Jesus Christ, who would
 
 *Original Scripture [Philippians 3](https://ebible.org/engwebp/PHP03.htm).*
 
-## Chapter 4"È›y¯ßy‘ Joy, Peace, and a Fragrant Gift
+## Chapter 4"√©√ùy√∏¬ßy√î Joy, Peace, and a Fragrant Gift
 
 Paul called them his joy and crown and urged them to stand firm. Euodia and Syntyche should agree in the Lord, helped by a loyal coworker; they had struggled beside Paul, Clement, and others whose names were in the book of life.
 
