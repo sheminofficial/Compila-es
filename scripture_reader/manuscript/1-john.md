@@ -2,7 +2,7 @@
 
 Editorial manuscript for *The Bible, Retold - A Literary Adaptation for Young English Readers*. The public-domain Protestant World English Bible is the source. Read this adaptation alongside Scripture.
 
-## Chapter 1 @@ The Word of Life
+## Chapter 1 — The Word of Life
 
 The writers proclaimed what existed from the beginning: what they had heard, seen with their eyes, watched, and touched concerning the Word of life. The life appeared; they had seen it and testified to the eternal life that was with the Father and appeared to them.
 
@@ -14,7 +14,7 @@ Anyone claiming to have no sin deceived himself, and truth was absent. If believ
 
 *Original Scripture [1 John 1](https://ebible.org/engwebp/1JN01.htm).*
 
-## Chapter 2 @@ Walk as Jesus Walked
+## Chapter 2 — Walk as Jesus Walked
 
 John wrote so they would not sin. If anyone sinned, Jesus Christ the righteous was their advocate with the Father and the atoning sacrifice for the whole world.
 
@@ -32,7 +32,7 @@ They should let the original message remain within them. Then they would remain 
 
 *Original Scripture [1 John 2](https://ebible.org/engwebp/1JN02.htm).*
 
-## Chapter 3 @@ Children of God Love in Action
+## Chapter 3 — Children of God Love in Action
 
 The Father's love was astonishing: believers were called God's children. The world did not recognize them because it did not know him. What they would become had not fully appeared, but when Christ appeared they would be like him, seeing him as he is. This hope led toward purity.
 
@@ -48,7 +48,7 @@ This reassured their hearts before God. Even when conscience condemned, God was 
 
 *Original Scripture [1 John 3](https://ebible.org/engwebp/1JN03.htm).*
 
-## Chapter 4 @@ Test the Spirits
+## Chapter 4 — Test the Spirits
 
 They must not believe every spirit but test them, because many false prophets had entered the world. The Spirit from God confessed that Jesus Christ came in flesh. The spirit denying Jesus was the antichrist's spirit already active in the world.
 
@@ -64,7 +64,7 @@ They loved because God first loved them. Claiming love for God while hating a vi
 
 *Original Scripture [1 John 4](https://ebible.org/engwebp/1JN04.htm).*
 
-## Chapter 5 @@ The Testimony of Eternal Life
+## Chapter 5 — The Testimony of Eternal Life
 
 Everyone believing Jesus is the Christ has been born of God. Loving the Father includes loving his children. Love for God means keeping commands, which are not crushing, because faith overcomes the world.
 
