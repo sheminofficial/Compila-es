@@ -2,7 +2,7 @@
 
 Editorial manuscript for *The Bible, Retold - A Literary Adaptation for Young English Readers*. The public-domain Protestant World English Bible is the source. This adaptation preserves the Persian court setting, narrative reversals, names, decrees, dates, and the book's deliberate lack of explicit reference to God. Read it alongside Scripture.
 
-## Chapter 1 @@ A Queen Refuses
+## Chapter 1 — A Queen Refuses
 
 King Ahasuerus ruled 127 provinces from India to Ethiopia. In his third year he displayed Persia and Media's wealth to officials for 180 days, then gave a seven-day feast in Susa's garden court. Rich hangings, marble pillars, golden couches, and varied golden cups surrounded unlimited royal wine. Queen Vashti held a feast for women.
 
@@ -14,7 +14,7 @@ The king agreed. Letters went to every province in its language declaring each m
 
 *Original Scripture [Esther 1](https://ebible.org/engwebp/EST01.htm).*
 
-## Chapter 2 @@ Esther Becomes Queen
+## Chapter 2 — Esther Becomes Queen
 
 After anger cooled, attendants proposed gathering beautiful young virgins into Susa under Hegai's care so the king could choose a queen.
 
@@ -28,7 +28,7 @@ While Mordecai sat at the gate, Bigthan and Teresh plotted to kill the king. Mor
 
 *Original Scripture [Esther 2](https://ebible.org/engwebp/EST02.htm).*
 
-## Chapter 3 @@ A Decree of Destruction
+## Chapter 3 — A Decree of Destruction
 
 The king promoted Haman son of Hammedatha the Agagite above other officials. Everyone at the gate bowed, but Mordecai refused because he was Jewish.
 
@@ -42,7 +42,7 @@ The king and Haman drank while Susa was bewildered.
 
 *Original Scripture [Esther 3](https://ebible.org/engwebp/EST03.htm).*
 
-## Chapter 4 @@ For Such a Time as This
+## Chapter 4 — For Such a Time as This
 
 Mordecai tore his clothes, wore sackcloth and ashes, and cried through Susa. Across provinces Jews fasted, wept, and mourned.
 
@@ -56,7 +56,7 @@ Esther asked all Jews in Susa to fast without food or drink for three days and n
 
 *Original Scripture [Esther 4](https://ebible.org/engwebp/EST04.htm).*
 
-## Chapter 5 @@ Two Banquets and a Gallows
+## Chapter 5 — Two Banquets and a Gallows
 
 On the third day Esther dressed royally and stood in the inner court. The king extended his golden scepter and offered up to half the kingdom.
 
@@ -68,7 +68,7 @@ Zeresh and the friends advised building a gallows fifty cubits high and asking t
 
 *Original Scripture [Esther 5](https://ebible.org/engwebp/EST05.htm).*
 
-## Chapter 6 @@ The Night the King Could Not Sleep
+## Chapter 6 — The Night the King Could Not Sleep
 
 That night the king could not sleep and ordered the chronicles read. He heard how Mordecai exposed Bigthan and Teresh. No honor had been given.
 
@@ -82,7 +82,7 @@ Before they finished, eunuchs rushed Haman to Esther's banquet.
 
 *Original Scripture [Esther 6](https://ebible.org/engwebp/EST06.htm).*
 
-## Chapter 7 @@ Haman Falls on His Own Gallows
+## Chapter 7 — Haman Falls on His Own Gallows
 
 At the second banquet the king again asked Esther's request. She pleaded for her life and her people's lives: they had been sold for destruction. Silence might have been possible under slavery, but annihilation threatened the king's interests too.
 
@@ -98,7 +98,7 @@ The king ordered Haman hanged upon it. Then his anger subsided.
 
 *Original Scripture [Esther 7](https://ebible.org/engwebp/EST07.htm).*
 
-## Chapter 8 @@ A Counter-Decree
+## Chapter 8 — A Counter-Decree
 
 The king gave Haman's estate to Esther. Mordecai entered the king's presence because Esther revealed their relationship. The king gave Mordecai Haman's signet ring, and Esther placed him over the estate.
 
@@ -114,7 +114,7 @@ For Jews there was light, gladness, joy, and honor. Feasts spread through provin
 
 *Original Scripture [Esther 8](https://ebible.org/engwebp/EST08.htm).*
 
-## Chapter 9 @@ The Days Called Purim
+## Chapter 9 — The Days Called Purim
 
 On Adar's thirteenth, when enemies hoped to rule Jews, the situation reversed. Jews assembled, and officials helped because fear of Mordecai spread; he had become powerful.
 
@@ -128,7 +128,7 @@ They called the days Purim after Pur, Haman's lot. Esther and Mordecai confirmed
 
 *Original Scripture [Esther 9](https://ebible.org/engwebp/EST09.htm).*
 
-## Chapter 10 @@ Mordecai Seeks His People's Good
+## Chapter 10 — Mordecai Seeks His People's Good
 
 King Ahasuerus imposed tribute across the empire and distant coastlands.
 
