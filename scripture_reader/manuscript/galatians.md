@@ -2,7 +2,7 @@
 
 Editorial manuscript for *The Bible, Retold - A Literary Adaptation for Young English Readers*. The public-domain Protestant World English Bible is the source. Read this adaptation alongside Scripture.
 
-## Chapter 1 @@ No Other Good News
+## Chapter 1 — No Other Good News
 
 Paul, an apostle sent not by humans but by Jesus Christ and the Father who raised him, wrote with the believers beside him to Galatia. Jesus gave himself for sins to rescue people from the present evil age.
 
@@ -16,7 +16,7 @@ He later went to Syria and Cilicia. Judean churches knew only that their former 
 
 *Original Scripture [Galatians 1](https://ebible.org/engwebp/GAL01.htm).*
 
-## Chapter 2 @@ Justified by Faith
+## Chapter 2 — Justified by Faith
 
 After fourteen years Paul returned to Jerusalem with Barnabas and Titus, privately presenting his gospel to recognized leaders. Though Titus was Greek, he was not forced to be circumcised. False brothers had slipped in to spy on freedom, but Paul yielded nothing so gospel truth would remain.
 
@@ -30,7 +30,7 @@ Through law Paul died to law so he could live to God. He had been crucified with
 
 *Original Scripture [Galatians 2](https://ebible.org/engwebp/GAL02.htm).*
 
-## Chapter 3 @@ The Promise Given to Abraham
+## Chapter 3 — The Promise Given to Abraham
 
 The Galatians had seen Christ crucified clearly proclaimed. Did they receive the Spirit by law works or hearing with faith? Having begun by the Spirit, could human effort complete them? God supplied the Spirit and miracles through faith.
 
@@ -44,7 +44,7 @@ Now faith had come; believers were God's children through faith. Those baptized 
 
 *Original Scripture [Galatians 3](https://ebible.org/engwebp/GAL03.htm).*
 
-## Chapter 4 @@ Children, Not Slaves
+## Chapter 4 — Children, Not Slaves
 
 An underage heir resembles a servant though owning everything, remaining under guardians until the father's time. Likewise people were enslaved under elemental principles.
 
@@ -60,7 +60,7 @@ Abraham had sons by Hagar the enslaved woman and Sarah the free woman. Paul used
 
 *Original Scripture [Galatians 4](https://ebible.org/engwebp/GAL04.htm).*
 
-## Chapter 5 @@ The Fruit of the Spirit
+## Chapter 5 — The Fruit of the Spirit
 
 Christ set them free, so they must stand firm and refuse slavery's yoke. Receiving circumcision as a basis for righteousness obligated a person to the whole law and severed him from relying on Christ's grace.
 
@@ -76,7 +76,7 @@ The Spirit's fruit was love, joy, peace, patience, kindness, goodness, faithfuln
 
 *Original Scripture [Galatians 5](https://ebible.org/engwebp/GAL05.htm).*
 
-## Chapter 6 @@ Carry One Another's Burdens
+## Chapter 6 — Carry One Another's Burdens
 
 Spiritual believers should restore someone caught in wrongdoing gently while watching themselves. They should carry one another's burdens and fulfill Christ's law, yet each person must examine and carry personal responsibility. Learners should share good things with teachers.
 
