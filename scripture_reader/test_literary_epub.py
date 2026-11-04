@@ -63,3 +63,16 @@ def test_verified_videos_use_allowed_https_hosts_and_are_embedded():
         for video in videos:
             assert video["url"].replace("&", "&amp;") in content
             assert video["note"] in content
+
+
+def test_accessible_vector_cover_is_packaged():
+    output = builder.build()
+    with zipfile.ZipFile(output) as archive:
+        names = set(archive.namelist())
+        cover_svg = next((name for name in names if name.endswith("/cover.svg")), None)
+        cover_page = next((name for name in names if name.endswith("/cover.xhtml")), None)
+        assert cover_svg is not None
+        assert cover_page is not None
+        svg = archive.read(cover_svg).decode("utf-8")
+        assert "<title id=\"cover-title\">The Bible, Retold</title>" in svg
+        assert "<desc id=\"cover-desc\">" in svg
