@@ -2,7 +2,7 @@
 
 Editorial manuscript for *The Bible, Retold - A Literary Adaptation for Young English Readers*. The public-domain Protestant World English Bible is the source. Read this adaptation alongside Scripture.
 
-## Chapter 1 @@ Every Spiritual Blessing
+## Chapter 1 — Every Spiritual Blessing
 
 Paul, an apostle by God's will, wrote grace and peace to the faithful in Christ.
 
@@ -16,7 +16,7 @@ That power raised Christ from death and seated him above every ruler, authority,
 
 *Original Scripture [Ephesians 1](https://ebible.org/engwebp/EPH01.htm).*
 
-## Chapter 2 @@ One New Humanity
+## Chapter 2 — One New Humanity
 
 They had been dead in wrongdoing, following the world's course, the ruler of the air, and selfish desires. Like everyone else, they were under judgment.
 
@@ -30,7 +30,7 @@ They were no longer strangers but fellow citizens and members of God's household
 
 *Original Scripture [Ephesians 2](https://ebible.org/engwebp/EPH02.htm).*
 
-## Chapter 3 @@ Strength to Know Christ's Love
+## Chapter 3 — Strength to Know Christ's Love
 
 Paul was Christ's prisoner for the nations. God's grace commissioned him with a mystery revealed by the Spirit: Gentiles were fellow heirs, members of one body, and sharers in Christ's promise through the gospel.
 
@@ -44,7 +44,7 @@ They should know Christ's love, though it surpasses knowledge, and be filled wit
 
 *Original Scripture [Ephesians 3](https://ebible.org/engwebp/EPH03.htm).*
 
-## Chapter 4 @@ Grow into Christ
+## Chapter 4 — Grow into Christ
 
 As the Lord's prisoner, Paul urged them to live worthily, with humility, gentleness, patience, and loving tolerance, preserving the Spirit's unity in peace.
 
@@ -58,7 +58,7 @@ Therefore they should replace lies with truth, control anger before sunset, stop
 
 *Original Scripture [Ephesians 4](https://ebible.org/engwebp/EPH04.htm).*
 
-## Chapter 5 @@ Walk in Love and Light
+## Chapter 5 — Walk in Love and Light
 
 As beloved children they should imitate God and walk in love, as Christ loved them and gave himself as a fragrant offering.
 
@@ -74,7 +74,7 @@ Marriage echoed the mystery of Christ and the church. Each husband must love his
 
 *Original Scripture [Ephesians 5](https://ebible.org/engwebp/EPH05.htm).*
 
-## Chapter 6 @@ Stand in God's Armor
+## Chapter 6 — Stand in God's Armor
 
 Children should obey parents in the Lord. Honoring father and mother was the first command with a promise. Fathers must not provoke children but raise them in the Lord's instruction.
 
