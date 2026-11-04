@@ -298,6 +298,9 @@ def process_doc(item):
             return False, None, None, 0
         book,chapter=identify(item,soup)
         body=soup.find("body")
+        if book == "Mark":
+            print("MARK_HTML_START",str(body)[:2800],flush=True)
+            print("MARK_ELEMENTS",[(x.name,x.get("class"),x.get("id"),x.get_text(" ",strip=True)[:55]) for x in body.find_all(["h1","h2","h3","span","div"],limit=45)],flush=True)
         total_chars = len(body.get_text(" ",strip=True))
         if total_chars < 200:
             return False,book,chapter,total_chars
