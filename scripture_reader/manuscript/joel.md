@@ -131,6 +131,12 @@ The Lord dwelt in Zion.
 | sickle | 3 | A hand tool with a curved blade used to cut crops. |
 | bloodguilt | 3 | Responsibility for the wrongful death of another person. |
 
+## Verified videos
+
+| Chapter | Title | URL | Editorial note |
+| --- | --- | --- | --- |
+| 1 | BibleProject — Overview: Joel | https://www.youtube.com/watch?v=zQLazbgz90c | Official English animated overview. This is an educational interpretation, not Scripture, and should be compared with the biblical text. |
+
 ## Editorial review record
 
 | Chapter | Source comparison | Editorial attention |
