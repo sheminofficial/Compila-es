@@ -2,7 +2,7 @@
 
 Editorial manuscript for *The Bible, Retold - A Literary Adaptation for Young English Readers*. The public-domain Protestant World English Bible is the source. This prose adaptation preserves the poems' grief, voices, images, theological tension, and unresolved ending. Read it alongside Scripture.
 
-## Chapter 1 @@ The Lonely City
+## Chapter 1 — The Lonely City
 
 Jerusalem, once crowded and honored among nations, sat alone like a widow. She wept through the night, with no comforter among former allies; friends had betrayed her.
 
@@ -18,7 +18,7 @@ Outside, the sword bereaved; inside, death waited. Enemies heard and rejoiced. J
 
 *Original Scripture [Lamentations 1](https://ebible.org/engwebp/LAM01.htm).*
 
-## Chapter 2 @@ The Day of the Lord's Anger
+## Chapter 2 — The Day of the Lord's Anger
 
 The Lord covered daughter Zion with anger, casting Israel's splendor from heaven and not remembering his footstool. Strongholds, kingdom, princes, horn, and wall fell. He bent his bow like an enemy and poured fury like fire.
 
@@ -36,7 +36,7 @@ The poem confronted God with the horror: women ate children they had cared for; 
 
 *Original Scripture [Lamentations 2](https://ebible.org/engwebp/LAM02.htm).*
 
-## Chapter 3 @@ Hope in the Middle of Affliction
+## Chapter 3 — Hope in the Middle of Affliction
 
 A suffering man spoke as one driven by God's wrath into darkness. His body wasted; chains enclosed him; prayers seemed blocked. God became like a bear and lion, tearing him apart, making him a target, filling him with bitterness and grinding his teeth in gravel.
 
@@ -52,7 +52,7 @@ He asked God to see the enemies' insults, plots, and songs, and to repay them, p
 
 *Original Scripture [Lamentations 3](https://ebible.org/engwebp/LAM03.htm).*
 
-## Chapter 4 @@ Gold Grown Dim
+## Chapter 4 — Gold Grown Dim
 
 Gold had lost its shine; sacred stones lay scattered at street corners. Zion's precious children were treated like clay pots.
 
@@ -70,7 +70,7 @@ Edom might rejoice temporarily, but judgment's cup would reach her. Zion's punis
 
 *Original Scripture [Lamentations 4](https://ebible.org/engwebp/LAM04.htm).*
 
-## Chapter 5 @@ Remember Us
+## Chapter 5 — Remember Us
 
 The community prayed: Lord, remember what happened and see their disgrace. Inheritance passed to strangers, homes to foreigners. They became fatherless, mothers like widows, paying for water and wood.
 
