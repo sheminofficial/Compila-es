@@ -2,7 +2,7 @@
 
 Editorial manuscript for *The Bible, Retold - A Literary Adaptation for Young English Readers*. The public-domain Protestant World English Bible is the source. Read this adaptation alongside Scripture.
 
-## Chapter 1 @@ The Lord Roars from Zion
+## Chapter 1 — The Lord Roars from Zion
 
 Amos, a shepherd from Tekoa, received words about Israel during Uzziah of Judah and Jeroboam son of Joash of Israel, two years before the earthquake. The Lord roared from Zion; pastures mourned and Carmel withered.
 
@@ -16,7 +16,7 @@ Ammon ripped open pregnant women in Gilead to enlarge territory. Rabbah would bu
 
 *Original Scripture [Amos 1](https://ebible.org/engwebp/AMO01.htm).*
 
-## Chapter 2 @@ Israel Sold the Righteous
+## Chapter 2 — Israel Sold the Righteous
 
 Moab burned Edom's king's bones into lime, so fire and battle would consume Kerioth and Moab's ruler.
 
@@ -30,7 +30,7 @@ God would press them like a cart loaded with grain. The swift could not flee, th
 
 *Original Scripture [Amos 2](https://ebible.org/engwebp/AMO02.htm).*
 
-## Chapter 3 @@ The Lion Has Roared
+## Chapter 3 — The Lion Has Roared
 
 God addressed the family brought from Egypt: because he had known them uniquely, he would punish their sins.
 
@@ -42,7 +42,7 @@ As a shepherd rescues only two legs or an ear from a lion, so little would remai
 
 *Original Scripture [Amos 3](https://ebible.org/engwebp/AMO03.htm).*
 
-## Chapter 4 @@ Yet You Did Not Return
+## Chapter 4 — Yet You Did Not Return
 
 The wealthy women of Samaria were called cows of Bashan: they oppressed poor people and demanded drink. They would be taken through breaches with hooks.
 
@@ -54,7 +54,7 @@ Therefore Israel must prepare to meet its God, the One forming mountains, creati
 
 *Original Scripture [Amos 4](https://ebible.org/engwebp/AMO04.htm).*
 
-## Chapter 5 @@ Let Justice Roll
+## Chapter 5 — Let Justice Roll
 
 Amos sang a funeral song: virgin Israel had fallen with no one to raise her; only a tenth of troops would return.
 
@@ -70,7 +70,7 @@ God rejected their festivals, offerings, and songs. Let justice roll like water 
 
 *Original Scripture [Amos 5](https://ebible.org/engwebp/AMO05.htm).*
 
-## Chapter 6 @@ Woe to the Complacent
+## Chapter 6 — Woe to the Complacent
 
 Woe to those comfortable in Zion and secure on Samaria's mountain, leaders trusted by Israel. They should compare Calneh, Hamath, and Gath.
 
@@ -84,7 +84,7 @@ Horses do not run on rocks, nor oxen plow the sea, yet Israel turned justice int
 
 *Original Scripture [Amos 6](https://ebible.org/engwebp/AMO06.htm).*
 
-## Chapter 7 @@ The Plumb Line and Amaziah
+## Chapter 7 — The Plumb Line and Amaziah
 
 God showed Amos locusts forming after the king's harvest. Amos begged forgiveness for small Jacob, and God relented.
 
@@ -100,7 +100,7 @@ Because Amaziah silenced God's word, his family and land would suffer, he would 
 
 *Original Scripture [Amos 7](https://ebible.org/engwebp/AMO07.htm).*
 
-## Chapter 8 @@ A Basket of Summer Fruit
+## Chapter 8 — A Basket of Summer Fruit
 
 God showed Amos summer fruit, a wordplay announcing Israel's end. Temple songs would become wailing, with bodies everywhere and silence.
 
@@ -114,7 +114,7 @@ A famine would come, not of bread or water but hearing the Lord's words. People 
 
 *Original Scripture [Amos 8](https://ebible.org/engwebp/AMO08.htm).*
 
-## Chapter 9 @@ The Fallen Shelter Raised
+## Chapter 9 — The Fallen Shelter Raised
 
 Amos saw the Lord beside the altar commanding its capitals struck. No one could hide in grave, heaven, Carmel, sea, or captivity; God's eyes would find them. The Lord touched earth and it melted, rising like the Nile.
 
