@@ -423,7 +423,7 @@ def scenes_page():
     """Separate editorial scene retellings: never substituted for Bible verses."""
     parts = ['<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Story scenes</title>',
              '<style>body{font-family:Georgia,serif;line-height:1.65;color:#33281f} h1,h2{font-family:sans-serif;color:#795838} section{margin:1.6em 0;padding:1em;border-left:3px solid #b48b56;background:#fbf7ef} small{color:#736554}a{color:#795838}</style></head><body>',
-             '<h1>28 Bible Scenes — Story-First Reading</h1>',
+             '<h1>24 Bible Scenes — Story-First Reading</h1>',
              '<p>These are short literary retellings in simpler English. They are <strong>not</strong> Bible verses and do not replace the full Scripture text. For the complete account, open the named book and chapter in the Bible table of contents.</p>']
     for (book,chapter),(title,story) in SCENES.items():
         parts.append('<section id="'+book.lower().replace(" ","-")+'-'+str(chapter)+'">')
