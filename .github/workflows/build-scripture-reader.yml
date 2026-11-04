@@ -33,12 +33,15 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install ebook tooling
-        run: python -m pip install --disable-pip-version-check ebooklib==0.19 beautifulsoup4==4.13.4 lxml==5.4.0
+        run: python -m pip install --disable-pip-version-check ebooklib==0.19 beautifulsoup4==4.13.4 lxml==5.4.0 pytest==8.4.2
       - name: Build and validate annotated source reader
         run: python scripture_reader/build_reader.py
       - name: Build literary manuscript EPUB and coverage report
         if: github.ref_name == 'bible-literary-retelling-2026'
         run: python scripture_reader/build_literary_epub.py
+      - name: Test canonical and interactive EPUB guarantees
+        if: github.ref_name == 'bible-literary-retelling-2026'
+        run: python -m pytest -q scripture_reader/test_literary_epub.py
       - name: Install official EPUBCheck 5.4.0
         if: github.ref_name == 'bible-literary-retelling-2026'
         run: |
